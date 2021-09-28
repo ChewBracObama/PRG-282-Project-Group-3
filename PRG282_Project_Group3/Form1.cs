@@ -16,5 +16,10 @@ namespace PRG282_Project_Group3
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Commitment Issues");
+        }
     }
 }
