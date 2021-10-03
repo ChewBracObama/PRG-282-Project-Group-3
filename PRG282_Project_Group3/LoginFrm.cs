@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
