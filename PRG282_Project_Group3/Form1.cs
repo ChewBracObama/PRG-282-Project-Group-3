@@ -19,12 +19,9 @@ namespace PRG282_Project_Group3
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Commitment Issues");
-            //nice job
-            MessageBox.Show("AnotherMessageBox");
-            MessageBox.Show("this");
-            //another one
-            //somthing 1
+            mainFrm main = new mainFrm();
+            main.Show();
+            this.Hide();
         }
     }
 }

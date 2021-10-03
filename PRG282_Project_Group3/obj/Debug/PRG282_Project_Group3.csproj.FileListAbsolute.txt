@@ -8,3 +8,14 @@ C:\Users\aiden\OneDrive - belgiumcampus.ac.za\PRG282\Project\Github\Repository\P
 C:\Users\aiden\OneDrive - belgiumcampus.ac.za\PRG282\Project\Github\Repository\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.csproj.CoreCompileInputs.cache
 C:\Users\aiden\OneDrive - belgiumcampus.ac.za\PRG282\Project\Github\Repository\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.exe
 C:\Users\aiden\OneDrive - belgiumcampus.ac.za\PRG282\Project\Github\Repository\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.pdb
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\bin\Debug\PRG282_Project_Group3.exe.config
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\bin\Debug\PRG282_Project_Group3.exe
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\bin\Debug\PRG282_Project_Group3.pdb
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.csproj.AssemblyReference.cache
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.Form1.resources
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.Properties.Resources.resources
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.csproj.GenerateResource.cache
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.csproj.CoreCompileInputs.cache
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.exe
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.pdb
+C:\Users\muham\Documents\GitHub\PRG-282-Project-Group-3\PRG282_Project_Group3\obj\Debug\PRG282_Project_Group3.mainFrm.resources
