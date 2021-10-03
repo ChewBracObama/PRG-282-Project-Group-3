@@ -63,9 +63,29 @@ namespace PRG282_Project_Group3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap computer {
+            get {
+                object obj = ResourceManager.GetObject("computer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kissclipart_join_our_team_clipart_youtube_clip_art_83f9c5a9710d28ab {
             get {
                 object obj = ResourceManager.GetObject("kissclipart-join-our-team-clipart-youtube-clip-art-83f9c5a9710d28ab", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pen2 {
+            get {
+                object obj = ResourceManager.GetObject("pen2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

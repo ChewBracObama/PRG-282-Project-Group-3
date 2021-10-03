@@ -16,5 +16,10 @@ namespace PRG282_Project_Group3
         {
             InitializeComponent();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

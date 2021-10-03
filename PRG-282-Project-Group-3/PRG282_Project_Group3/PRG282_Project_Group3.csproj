@@ -110,5 +110,11 @@
   <ItemGroup>
     <None Include="Resources\kissclipart-join-our-team-clipart-youtube-clip-art-83f9c5a9710d28ab.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
