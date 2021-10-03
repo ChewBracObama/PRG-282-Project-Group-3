@@ -10,18 +10,23 @@ using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
 {
-    public partial class LoginForm : Form
+    public partial class Form1 : Form
     {
-        public LoginForm()
+        public Form1()
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            mainFrm main = new mainFrm();
-            main.Show();
-            this.Hide();
+            MessageBox.Show("Commitment Issues");
+            //nice job
+            MessageBox.Show("AnotherMessageBox");
+            MessageBox.Show("this");
+            
+            //another one
+            //somthing 1
+            //Test change
         }
     }
 }
