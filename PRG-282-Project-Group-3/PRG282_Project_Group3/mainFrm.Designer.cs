@@ -31,7 +31,6 @@ namespace PRG282_Project_Group3
         {
             this.dgvMain = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUploadImg = new System.Windows.Forms.Button();
             this.pbStudent = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@ namespace PRG282_Project_Group3
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblImage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStudent)).BeginInit();
             this.SuspendLayout();
@@ -66,16 +66,6 @@ namespace PRG282_Project_Group3
             this.btnAdd.Text = "Add New User";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnUploadImg
-            // 
-            this.btnUploadImg.Location = new System.Drawing.Point(538, 8);
-            this.btnUploadImg.Name = "btnUploadImg";
-            this.btnUploadImg.Size = new System.Drawing.Size(100, 23);
-            this.btnUploadImg.TabIndex = 8;
-            this.btnUploadImg.Text = "Upload Image";
-            this.btnUploadImg.UseVisualStyleBackColor = true;
-            this.btnUploadImg.Click += new System.EventHandler(this.btnUploadImg_Click);
             // 
             // pbStudent
             // 
@@ -193,12 +183,22 @@ namespace PRG282_Project_Group3
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lblImage
+            // 
+            this.lblImage.AutoSize = true;
+            this.lblImage.Location = new System.Drawing.Point(479, 21);
+            this.lblImage.Name = "lblImage";
+            this.lblImage.Size = new System.Drawing.Size(76, 13);
+            this.lblImage.TabIndex = 34;
+            this.lblImage.Text = "Student Image";
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
             this.ClientSize = new System.Drawing.Size(706, 487);
+            this.Controls.Add(this.lblImage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
@@ -212,7 +212,6 @@ namespace PRG282_Project_Group3
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.pbStudent);
-            this.Controls.Add(this.btnUploadImg);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvMain);
             this.Name = "mainFrm";
@@ -228,7 +227,6 @@ namespace PRG282_Project_Group3
 
         private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnUploadImg;
         private System.Windows.Forms.PictureBox pbStudent;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnUpdate;
@@ -242,5 +240,6 @@ namespace PRG282_Project_Group3
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblImage;
     }
 }
