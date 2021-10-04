@@ -228,7 +228,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(262, 156);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 11;
             this.button1.Text = "Upload";
             this.button1.UseVisualStyleBackColor = true;
