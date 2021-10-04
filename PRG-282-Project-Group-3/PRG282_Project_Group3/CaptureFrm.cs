@@ -26,5 +26,21 @@ namespace PRG282_Project_Group3
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainFrm mainFrm = new mainFrm();
+            mainFrm.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainFrm mainFrm = new mainFrm();
+            mainFrm.ShowDialog();
+            this.Close();
+        }
     }
 }

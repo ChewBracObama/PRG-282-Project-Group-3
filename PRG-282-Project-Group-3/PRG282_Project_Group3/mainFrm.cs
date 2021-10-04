@@ -21,9 +21,10 @@ namespace PRG282_Project_Group3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CaptureFrm captureFrm = new CaptureFrm();
-            captureFrm.Show();
             this.Hide();
+            CaptureFrm captureFrm = new CaptureFrm();
+            captureFrm.ShowDialog();
+            this.Close();
         }
 
         private void btnUploadImg_Click(object sender, EventArgs e)
@@ -38,7 +39,9 @@ namespace PRG282_Project_Group3
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
-
+            Form1 login = new Form1();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }

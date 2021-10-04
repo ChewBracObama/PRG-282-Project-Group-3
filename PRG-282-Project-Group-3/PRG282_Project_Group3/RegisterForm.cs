@@ -16,5 +16,21 @@ namespace PRG282_Project_Group3
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.ShowDialog();
+            this.Close();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }
