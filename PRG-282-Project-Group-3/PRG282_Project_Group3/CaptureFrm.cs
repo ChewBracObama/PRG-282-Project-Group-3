@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
 {
-    public partial class Capture : Form
+    public partial class CaptureFrm : Form
     {
-        public Capture()
+        public CaptureFrm()
         {
             InitializeComponent();
         }

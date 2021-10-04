@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Capture.cs">
+    <Compile Include="CaptureFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capture.Designer.cs">
-      <DependentUpon>Capture.cs</DependentUpon>
+    <Compile Include="CaptureFrm.Designer.cs">
+      <DependentUpon>CaptureFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -72,8 +72,8 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Capture.resx">
-      <DependentUpon>Capture.cs</DependentUpon>
+    <EmbeddedResource Include="CaptureFrm.resx">
+      <DependentUpon>CaptureFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

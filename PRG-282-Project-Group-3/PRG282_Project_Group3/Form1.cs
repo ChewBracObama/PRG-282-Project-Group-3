@@ -23,10 +23,21 @@ namespace PRG282_Project_Group3
             //nice job
             MessageBox.Show("AnotherMessageBox");
             MessageBox.Show("this");
+
+            mainFrm mainFrm = new mainFrm();
+            mainFrm.Show();
+            this.Hide();
             
             //another one
             //somthing 1
             //Test change
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
         }
     }
 }
