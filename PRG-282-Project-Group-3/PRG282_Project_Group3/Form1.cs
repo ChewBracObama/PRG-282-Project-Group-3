@@ -19,16 +19,18 @@ namespace PRG282_Project_Group3
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            mainFrm mainFrm = new mainFrm();
-            mainFrm.Show();
             this.Hide();
+            mainFrm mainFrm = new mainFrm();
+            mainFrm.ShowDialog();
+            this.Close();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
             this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
+            this.Close();
         }
     }
 }
