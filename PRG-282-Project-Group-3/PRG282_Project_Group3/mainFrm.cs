@@ -16,7 +16,6 @@ namespace PRG282_Project_Group3
         public mainFrm()
         {
             InitializeComponent();
-            clbModules.Items.AddRange(modules);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,6 +40,14 @@ namespace PRG282_Project_Group3
             this.Hide();
             Form1 login = new Form1();
             login.ShowDialog();
+            this.Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CaptureFrm captureFrm = new CaptureFrm();
+            captureFrm.ShowDialog();
             this.Close();
         }
     }

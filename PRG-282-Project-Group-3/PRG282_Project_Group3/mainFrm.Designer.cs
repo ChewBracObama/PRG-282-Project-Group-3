@@ -30,29 +30,21 @@ namespace PRG282_Project_Group3
         private void InitializeComponent()
         {
             this.dgvMain = new System.Windows.Forms.DataGridView();
-            this.lblNum = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblSurname = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.tbstdNum = new System.Windows.Forms.TextBox();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbSurname = new System.Windows.Forms.TextBox();
             this.btnUploadImg = new System.Windows.Forms.Button();
             this.pbStudent = new System.Windows.Forms.PictureBox();
-            this.lblDOB = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.tbPhoneNum = new System.Windows.Forms.TextBox();
-            this.tbAddress = new System.Windows.Forms.TextBox();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.clbModules = new System.Windows.Forms.CheckedListBox();
-            this.lblModules = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lblRichBox = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStudent)).BeginInit();
             this.SuspendLayout();
@@ -60,41 +52,14 @@ namespace PRG282_Project_Group3
             // dgvMain
             // 
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMain.Location = new System.Drawing.Point(429, 221);
+            this.dgvMain.Location = new System.Drawing.Point(181, 212);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.Size = new System.Drawing.Size(509, 211);
             this.dgvMain.TabIndex = 0;
             // 
-            // lblNum
-            // 
-            this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(12, 32);
-            this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(84, 13);
-            this.lblNum.TabIndex = 1;
-            this.lblNum.Text = "Student Number";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 75);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(57, 13);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "First Name";
-            // 
-            // lblSurname
-            // 
-            this.lblSurname.AutoSize = true;
-            this.lblSurname.Location = new System.Drawing.Point(11, 121);
-            this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(58, 13);
-            this.lblSurname.TabIndex = 3;
-            this.lblSurname.Text = "Last Name";
-            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(134, 374);
+            this.btnAdd.Location = new System.Drawing.Point(15, 360);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(91, 23);
             this.btnAdd.TabIndex = 4;
@@ -102,30 +67,9 @@ namespace PRG282_Project_Group3
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tbstdNum
-            // 
-            this.tbstdNum.Location = new System.Drawing.Point(134, 32);
-            this.tbstdNum.Name = "tbstdNum";
-            this.tbstdNum.Size = new System.Drawing.Size(131, 20);
-            this.tbstdNum.TabIndex = 5;
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(134, 72);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(131, 20);
-            this.tbName.TabIndex = 6;
-            // 
-            // tbSurname
-            // 
-            this.tbSurname.Location = new System.Drawing.Point(134, 114);
-            this.tbSurname.Name = "tbSurname";
-            this.tbSurname.Size = new System.Drawing.Size(131, 20);
-            this.tbSurname.TabIndex = 7;
-            // 
             // btnUploadImg
             // 
-            this.btnUploadImg.Location = new System.Drawing.Point(786, 8);
+            this.btnUploadImg.Location = new System.Drawing.Point(538, 8);
             this.btnUploadImg.Name = "btnUploadImg";
             this.btnUploadImg.Size = new System.Drawing.Size(100, 23);
             this.btnUploadImg.TabIndex = 8;
@@ -135,108 +79,12 @@ namespace PRG282_Project_Group3
             // 
             // pbStudent
             // 
-            this.pbStudent.Location = new System.Drawing.Point(730, 37);
+            this.pbStudent.Location = new System.Drawing.Point(482, 37);
             this.pbStudent.Name = "pbStudent";
             this.pbStudent.Size = new System.Drawing.Size(208, 154);
             this.pbStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStudent.TabIndex = 9;
             this.pbStudent.TabStop = false;
-            // 
-            // lblDOB
-            // 
-            this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(11, 171);
-            this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(66, 13);
-            this.lblDOB.TabIndex = 10;
-            this.lblDOB.Text = "Date of Birth";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(11, 221);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(42, 13);
-            this.lblGender.TabIndex = 11;
-            this.lblGender.Text = "Gender";
-            // 
-            // dtpDOB
-            // 
-            this.dtpDOB.Location = new System.Drawing.Point(134, 171);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(195, 20);
-            this.dtpDOB.TabIndex = 12;
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(134, 221);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(48, 17);
-            this.rbMale.TabIndex = 13;
-            this.rbMale.TabStop = true;
-            this.rbMale.Text = "Male";
-            this.rbMale.UseVisualStyleBackColor = true;
-            // 
-            // rbFemale
-            // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(237, 221);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rbFemale.TabIndex = 14;
-            this.rbFemale.TabStop = true;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(12, 268);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 13);
-            this.lblPhone.TabIndex = 15;
-            this.lblPhone.Text = "Phone Number";
-            // 
-            // tbPhoneNum
-            // 
-            this.tbPhoneNum.Location = new System.Drawing.Point(134, 268);
-            this.tbPhoneNum.Name = "tbPhoneNum";
-            this.tbPhoneNum.Size = new System.Drawing.Size(131, 20);
-            this.tbPhoneNum.TabIndex = 16;
-            // 
-            // tbAddress
-            // 
-            this.tbAddress.Location = new System.Drawing.Point(134, 322);
-            this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(131, 20);
-            this.tbAddress.TabIndex = 17;
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(12, 325);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(45, 13);
-            this.lblAddress.TabIndex = 18;
-            this.lblAddress.Text = "Address";
-            // 
-            // clbModules
-            // 
-            this.clbModules.FormattingEnabled = true;
-            this.clbModules.Location = new System.Drawing.Point(425, 37);
-            this.clbModules.Name = "clbModules";
-            this.clbModules.Size = new System.Drawing.Size(219, 154);
-            this.clbModules.TabIndex = 19;
-            // 
-            // lblModules
-            // 
-            this.lblModules.AutoSize = true;
-            this.lblModules.Location = new System.Drawing.Point(422, 13);
-            this.lblModules.Name = "lblModules";
-            this.lblModules.Size = new System.Drawing.Size(47, 13);
-            this.lblModules.TabIndex = 20;
-            this.lblModules.Text = "Modules";
             // 
             // btnLogOut
             // 
@@ -250,50 +98,122 @@ namespace PRG282_Project_Group3
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(132, 419);
+            this.btnUpdate.Location = new System.Drawing.Point(15, 305);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(91, 23);
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(256, 419);
+            this.btnDelete.Location = new System.Drawing.Point(15, 253);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 23);
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete User";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(181, 37);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(295, 154);
+            this.richTextBox1.TabIndex = 24;
+            this.richTextBox1.Text = "";
+            // 
+            // lblRichBox
+            // 
+            this.lblRichBox.AutoSize = true;
+            this.lblRichBox.Location = new System.Drawing.Point(178, 21);
+            this.lblRichBox.Name = "lblRichBox";
+            this.lblRichBox.Size = new System.Drawing.Size(90, 13);
+            this.lblRichBox.TabIndex = 25;
+            this.lblRichBox.Text = "Student Summary";
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(9, 21);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(159, 13);
+            this.lblSearch.TabIndex = 26;
+            this.lblSearch.Text = "Search by Student ID or Module";
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(12, 48);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(156, 20);
+            this.tbSearch.TabIndex = 27;
+            // 
+            // btnLast
+            // 
+            this.btnLast.Location = new System.Drawing.Point(181, 429);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(69, 46);
+            this.btnLast.TabIndex = 29;
+            this.btnLast.Text = "Last index";
+            this.btnLast.UseVisualStyleBackColor = true;
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Location = new System.Drawing.Point(621, 429);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(69, 46);
+            this.btnFirst.TabIndex = 30;
+            this.btnFirst.Text = "First Index";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.Location = new System.Drawing.Point(335, 434);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(60, 36);
+            this.btnPrev.TabIndex = 31;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(451, 434);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(60, 36);
+            this.btnNext.TabIndex = 32;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 487);
+            this.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.ClientSize = new System.Drawing.Size(706, 487);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPrev);
+            this.Controls.Add(this.btnFirst);
+            this.Controls.Add(this.btnLast);
+            this.Controls.Add(this.tbSearch);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.lblRichBox);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.lblModules);
-            this.Controls.Add(this.clbModules);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.tbAddress);
-            this.Controls.Add(this.tbPhoneNum);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.rbFemale);
-            this.Controls.Add(this.rbMale);
-            this.Controls.Add(this.dtpDOB);
-            this.Controls.Add(this.lblGender);
-            this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.pbStudent);
             this.Controls.Add(this.btnUploadImg);
-            this.Controls.Add(this.tbSurname);
-            this.Controls.Add(this.tbName);
-            this.Controls.Add(this.tbstdNum);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblSurname);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.lblNum);
             this.Controls.Add(this.dgvMain);
             this.Name = "mainFrm";
             this.Text = "CRUD Operations";
@@ -307,28 +227,20 @@ namespace PRG282_Project_Group3
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMain;
-        private System.Windows.Forms.Label lblNum;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox tbstdNum;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.Button btnUploadImg;
         private System.Windows.Forms.PictureBox pbStudent;
-        private System.Windows.Forms.Label lblDOB;
-        private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.DateTimePicker dtpDOB;
-        private System.Windows.Forms.RadioButton rbMale;
-        private System.Windows.Forms.RadioButton rbFemale;
-        private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.TextBox tbPhoneNum;
-        private System.Windows.Forms.TextBox tbAddress;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.CheckedListBox clbModules;
-        private System.Windows.Forms.Label lblModules;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label lblRichBox;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button button1;
     }
 }
