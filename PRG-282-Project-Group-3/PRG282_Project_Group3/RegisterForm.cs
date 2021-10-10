@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using PRG282_Project_Group3.Data_Access_Layer;
+using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
 {
     public partial class RegisterForm : Form
     {
+        private Datahandler dataHandler = new Datahandler();
+
         public RegisterForm()
         {
             InitializeComponent();
@@ -20,46 +16,34 @@ namespace PRG282_Project_Group3
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 login = new Form1();
-            login.ShowDialog();
-            this.Close();
+            createForm1();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             bool accountCreated = false;
-            
+
+            string username = tbxUsername.Text;
+            string pass = tbxPass.Text;
+            string passRepeat = tbxPassRepeat.Text;
+            int passlength = tbxPass.Text.Length;
 
             string file = @".\UserDetails.txt";
 
             do
             {
-                string username = tbxUsername.Text;
-                string pass = tbxPass.Text;
-                string passRepeat = tbxPassRepeat.Text;
-                int passlength = tbxPass.Text.Length;
-
                 if (File.Exists(file) == true)
                 {
                     if ((passlength >= 8) && (pass == passRepeat))
                     {
-                        using (StreamWriter writer = new StreamWriter(file, append: true))
-                        {
-                            writer.WriteLine($"{username};{pass}");
-                            writer.Close();
-                            accountCreated = true;
-                            MessageBox.Show("Created");
+                        dataHandler.RegisterUser(file, username, pass, accountCreated);
 
-                            this.Hide();
-                            Form1 login = new Form1();
-                            login.ShowDialog();
-                            this.Close();
-                        }
+                        createForm1();
+                        break;
                     }
                     else
                     {
-                        MessageBox.Show("naught");
+                        MessageBox.Show("Invalid details entered. Please try again");
                         tbxUsername.Clear();
                         tbxPass.Clear();
                         tbxPassRepeat.Clear();
@@ -71,22 +55,14 @@ namespace PRG282_Project_Group3
                     if ((passlength >= 8) && (pass == passRepeat))
                     {
                         File.Create(file);
-                        using (StreamWriter writer = new StreamWriter(file, append: true))
-                        {
-                            writer.WriteLine($"{username};{pass}");
-                            writer.Close();
-                            accountCreated = true;
-                            MessageBox.Show("Created");
+                        dataHandler.RegisterUser(file, username, pass, accountCreated);
 
-                            this.Hide();
-                            Form1 login = new Form1();
-                            login.ShowDialog();
-                            this.Close();
-                        }
+                        createForm1();
+                        break;
                     }
                     else
                     {
-                        MessageBox.Show("naught");
+                        MessageBox.Show("Invalid details entered. Please try again");
                         tbxUsername.Clear();
                         tbxPass.Clear();
                         tbxPassRepeat.Clear();
@@ -94,7 +70,14 @@ namespace PRG282_Project_Group3
                     }
                 }
             } while (accountCreated == false);
-           
+        }
+
+        private void createForm1()
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }
