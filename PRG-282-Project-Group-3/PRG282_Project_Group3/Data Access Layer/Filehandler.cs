@@ -31,5 +31,17 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             }
             return File.Exists(path);
         }
+
+        public bool RegisterUser(string file, string username, string pass, bool accountCreated)
+        {
+            using (StreamWriter writer = new StreamWriter(file, append: true))
+            {
+                writer.WriteLine($"{username};{pass}");
+                writer.Close();
+                accountCreated = true;
+                MessageBox.Show("Created");
+                return accountCreated;
+            }
+        }
     }
 }
