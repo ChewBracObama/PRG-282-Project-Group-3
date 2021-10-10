@@ -16,9 +16,10 @@ namespace PRG282_Project_Group3
         List<Students> studentsList = new List<Students>();
         //public mainFrm(List<Students> students)
         //{
-        //   // studentsList = students;                                testing list pass from capture
-        //    //Image image = studentsList[0].StudentImage;
-        //   // MessageBox.Show(image.ToString());
+        //    studentsList = students;                               // testing list pass from capture
+        //    Image image = studentsList[0].StudentImage;
+        //    pbStudent.Bit = image;
+        //    MessageBox.Show(image.ToString());
         //    InitializeComponent();
         //}
         public mainFrm()
@@ -63,6 +64,11 @@ namespace PRG282_Project_Group3
         }
 
         private void mainFrm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbStudent_Click(object sender, EventArgs e)
         {
 
         }

@@ -22,14 +22,14 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             this.connection = new SqlConnection(connectionString);
         }
         
-        public void insertStudent()
+        public void insertStudent(string StudentId, string name, string surname, Image studentImg, char gender,string dob ,string phone, string address, string ModuleCode)
         {
             connection.Open();
             //below values should be subbed with actual var after validation
-            string qryimgUpload = "INSERT INTO Students(Name,Surname,StudentImage,Gender,DOB,Phone,StudentAddress) VALUES('Martin','Erasmus',@P_Image,'M','17/09/1999','0817219965','15 Fourth Rd Bredell')";
+            string qryimgUpload =string.Format("INSERT INTO Students(Name,Surname,StudentImage,Gender,DOB,Phone,StudentAddress) VALUES('{0}','{1}',@P_Image,'{2}','{3}','{4}','{5}')",name,surname,gender,dob,phone,address);
             SqlCommand command = new SqlCommand(qryimgUpload, connection);
 
-            Image image = Image.FromFile(@"C:\Users\Martin\Documents\Belguim\2nd Year\PRG282\saved_images\0.jpg");
+            Image image = studentImg;
             MemoryStream ms = new MemoryStream();
             image.Save(ms, ImageFormat.Jpeg);
             byte[] photoArray = new byte[ms.Length];
@@ -41,8 +41,6 @@ namespace PRG282_Project_Group3.Data_Access_Layer
         }
         public List<Students> getStudents()
         {
-            
-
             List<Students> studentsList = new List<Students>();
             string query = "SELECT * FROM Students;";
             if (connection.State!=ConnectionState.Open)
