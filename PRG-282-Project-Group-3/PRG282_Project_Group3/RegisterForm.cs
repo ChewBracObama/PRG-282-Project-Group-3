@@ -36,7 +36,7 @@ namespace PRG282_Project_Group3
                 {
                     if ((passlength >= 8) && (pass == passRepeat))
                     {
-                        fileHandler.RegisterUser(file, username, pass, accountCreated);
+                        accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
 
                         createForm1();
                         break;
@@ -56,7 +56,7 @@ namespace PRG282_Project_Group3
                     {
                         File.Create(file);
 
-                        fileHandler.RegisterUser(file, username, pass, accountCreated);
+                        accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
 
                         createForm1();
                         break;
