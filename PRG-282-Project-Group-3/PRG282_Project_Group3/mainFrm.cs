@@ -13,6 +13,14 @@ namespace PRG282_Project_Group3
     public partial class mainFrm : Form
     {
         string[] modules = { "PRG281","DBD281","MAT282","WPR181","STA281","LPR282","MAT281"};
+        List<Students> studentsList = new List<Students>();
+        //public mainFrm(List<Students> students)
+        //{
+        //   // studentsList = students;                                testing list pass from capture
+        //    //Image image = studentsList[0].StudentImage;
+        //   // MessageBox.Show(image.ToString());
+        //    InitializeComponent();
+        //}
         public mainFrm()
         {
             InitializeComponent();
@@ -31,6 +39,9 @@ namespace PRG282_Project_Group3
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.InitialDirectory = @"C:\Pictures\";
             ofd.ShowDialog();
+        
+            
+           // pbStudent = image;
 
             pbStudent.ImageLocation = ofd.FileName;
         }
@@ -49,6 +60,11 @@ namespace PRG282_Project_Group3
             CaptureFrm captureFrm = new CaptureFrm();
             captureFrm.ShowDialog();
             this.Close();
+        }
+
+        private void mainFrm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

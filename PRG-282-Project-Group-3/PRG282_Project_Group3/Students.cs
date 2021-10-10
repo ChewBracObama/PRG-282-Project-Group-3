@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace PRG282_Project_Group3
 {
-    class Students
+   public class Students
     {
         int studentID;
         string name;
         string surname;
         Image studentImage;
         char gender;
-        DateTime dob;
+        string dob;
         string phone;
         string studentAddress;
 
-        public Students(int studentID, string name, string surname, Image studentImage, char gender, DateTime dob, string phone, string studentAddress)
+        public Students(int studentID, string name, string surname, Image studentImage, char gender, string dob, string phone, string studentAddress)
         {
             this.StudentID = studentID;
             this.Name = name;
@@ -35,7 +35,7 @@ namespace PRG282_Project_Group3
         public string Surname { get => surname; set => surname = value; }
         public Image StudentImage { get => studentImage; set => studentImage = value; }
         public char Gender { get => gender; set => gender = value; }
-        public DateTime Dob { get => dob; set => dob = value; }
+        public string Dob { get => dob; set => dob = value; }
         public string Phone { get => phone; set => phone = value; }
         public string StudentAddress { get => studentAddress; set => studentAddress = value; }
     }
