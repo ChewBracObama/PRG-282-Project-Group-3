@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project_Group3.Data_Access_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,15 @@ namespace PRG282_Project_Group3
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+          
+
+
+            Datahandler datahandler = new Datahandler();
+            
+            List<Students> students = new List<Students>();
+            students= datahandler.getStudents();
+
+            // mainFrm mainFrm = new mainFrm(students); test passing StudentList
             mainFrm mainFrm = new mainFrm();
             mainFrm.ShowDialog();
             this.Close();
