@@ -31,6 +31,8 @@ namespace PRG282_Project_Group3
             Form1 login = new Form1();
             login.ShowDialog();
             this.Close();
+
+
         }
     }
 }
