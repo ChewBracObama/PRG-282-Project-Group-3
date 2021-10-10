@@ -7,7 +7,7 @@ namespace PRG282_Project_Group3
 {
     public partial class RegisterForm : Form
     {
-        private Datahandler dataHandler = new Datahandler();
+        Filehandler fileHandler = new Filehandler();
 
         public RegisterForm()
         {
@@ -36,7 +36,7 @@ namespace PRG282_Project_Group3
                 {
                     if ((passlength >= 8) && (pass == passRepeat))
                     {
-                        dataHandler.RegisterUser(file, username, pass, accountCreated);
+                        fileHandler.RegisterUser(file, username, pass, accountCreated);
 
                         createForm1();
                         break;
@@ -55,7 +55,8 @@ namespace PRG282_Project_Group3
                     if ((passlength >= 8) && (pass == passRepeat))
                     {
                         File.Create(file);
-                        dataHandler.RegisterUser(file, username, pass, accountCreated);
+
+                        fileHandler.RegisterUser(file, username, pass, accountCreated);
 
                         createForm1();
                         break;
