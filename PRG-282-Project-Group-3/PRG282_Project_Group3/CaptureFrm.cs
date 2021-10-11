@@ -1,4 +1,5 @@
-﻿using PRG282_Project_Group3.Data_Access_Layer;
+﻿using PRG282_Project_Group3.BAC;
+using PRG282_Project_Group3.Data_Access_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,10 @@ namespace PRG282_Project_Group3
 {
     public partial class CaptureFrm : Form
     {
+        BusinessLogic businessLogic = new BusinessLogic();
+        Datahandler datahandler = new Datahandler();
+
+        Image studentImage;
         public CaptureFrm()
         {
             InitializeComponent();
@@ -25,24 +30,57 @@ namespace PRG282_Project_Group3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"C:\Pictures\";
+            ofd.ShowDialog();
+           
 
+            if (ofd.FileName != "") 
+            {
+                studentImage = Image.FromFile(ofd.FileName);
+                button1.BackColor = Color.Green;
+                button1.Text = "Uploaded";
+            }
+            else
+            {
+                button1.BackColor = Color.Red;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-          
+            //List<Students> students = new List<Students>();
+            // students= datahandler.getStudents();
+            string StudentId = textBox1.Text;
+            string name = textBox2.Text;
+            string surname = surnameTbox.Text;
+            string phone = textBox3.Text;
+            char gender = 'n';
+            string address = textBox4.Text;
+            string dob = dateTimePicker1.Text;
+            List<string> moduleCodes = new List<string>();
 
+            for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+            {
+                moduleCodes.Add(checkedListBox1.CheckedItems[i].ToString());
+            }
+            foreach (var item in moduleCodes)
+            {
+                MessageBox.Show(item.ToString());
+            }
 
-            Datahandler datahandler = new Datahandler();
-            
-            List<Students> students = new List<Students>();
-            students= datahandler.getStudents();
+            if (radioButton1.Checked==true)
+            {
+                gender = 'M';
+            }
+            else if(radioButton2.Checked==true)
+            {
+                gender = 'F';
+            }
 
-            // mainFrm mainFrm = new mainFrm(students); test passing StudentList
-            mainFrm mainFrm = new mainFrm();
-            mainFrm.ShowDialog();
-            this.Close();
+        
+            MessageBox.Show(businessLogic.checkCapture(StudentId, name, surname, studentImage, gender, dob, phone, address,moduleCodes).ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -51,6 +89,21 @@ namespace PRG282_Project_Group3
             mainFrm mainFrm = new mainFrm();
             mainFrm.ShowDialog();
             this.Close();
+        }
+
+        private void CaptureFrm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

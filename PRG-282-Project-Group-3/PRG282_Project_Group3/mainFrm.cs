@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PRG282_Project_Group3.BAC;
 
 namespace PRG282_Project_Group3
 {
@@ -16,9 +17,10 @@ namespace PRG282_Project_Group3
         List<Students> studentsList = new List<Students>();
         //public mainFrm(List<Students> students)
         //{
-        //   // studentsList = students;                                testing list pass from capture
-        //    //Image image = studentsList[0].StudentImage;
-        //   // MessageBox.Show(image.ToString());
+        //    studentsList = students;                               // testing list pass from capture
+        //    Image image = studentsList[0].StudentImage;
+        //    pbStudent.Bit = image;
+        //    MessageBox.Show(image.ToString());
         //    InitializeComponent();
         //}
         public mainFrm()
@@ -36,14 +38,7 @@ namespace PRG282_Project_Group3
 
         private void btnUploadImg_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"C:\Pictures\";
-            ofd.ShowDialog();
-        
-            
-           // pbStudent = image;
 
-            pbStudent.ImageLocation = ofd.FileName;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -64,6 +59,18 @@ namespace PRG282_Project_Group3
 
         private void mainFrm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void pbStudent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int index = dgvMain.CurrentCell.RowIndex;
+
 
         }
     }
