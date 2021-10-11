@@ -17,6 +17,7 @@ namespace PRG282_Project_Group3
         BusinessLogic businessLogic = new BusinessLogic();
         Datahandler datahandler = new Datahandler();
 
+        Image studentImage;
         public CaptureFrm()
         {
             InitializeComponent();
@@ -29,7 +30,21 @@ namespace PRG282_Project_Group3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"C:\Pictures\";
+            ofd.ShowDialog();
+           
 
+            if (ofd.FileName != "") 
+            {
+                studentImage = Image.FromFile(ofd.FileName);
+                button1.BackColor = Color.Green;
+                button1.Text = "Uploaded";
+            }
+            else
+            {
+                button1.BackColor = Color.Red;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,10 +54,12 @@ namespace PRG282_Project_Group3
             // students= datahandler.getStudents();
             string StudentId = textBox1.Text;
             string name = textBox2.Text;
+            string surname = surnameTbox.Text;
             string phone = textBox3.Text;
             char gender = 'n';
             string address = textBox4.Text;
             string dob = dateTimePicker1.Text;
+            string moduleCode = comboBox1.Text;
            
             if (radioButton1.Checked==true)
             {
@@ -53,12 +70,8 @@ namespace PRG282_Project_Group3
                 gender = 'F';
             }
 
-            Image image = Image.FromFile(@"C:\Users\Martin\Documents\Belguim\2nd Year\PRG282\saved_images\martin.jpg");
-            MessageBox.Show(businessLogic.checkCapture(StudentId, name, "Erasmus", image, gender, dob, phone, address, "PRG282").ToString());
-            //mainFrm mainFrm = new mainFrm(students); //test passing StudentList
-            // mainFrm mainFrm = new mainFrm();
-            // mainFrm.ShowDialog();
-            // this.Close();
+        
+            MessageBox.Show(businessLogic.checkCapture(StudentId, name, surname, studentImage, gender, dob, phone, address,moduleCode).ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -67,6 +80,16 @@ namespace PRG282_Project_Group3
             mainFrm mainFrm = new mainFrm();
             mainFrm.ShowDialog();
             this.Close();
+        }
+
+        private void CaptureFrm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
