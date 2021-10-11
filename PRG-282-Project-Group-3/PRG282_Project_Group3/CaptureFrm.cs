@@ -59,8 +59,17 @@ namespace PRG282_Project_Group3
             char gender = 'n';
             string address = textBox4.Text;
             string dob = dateTimePicker1.Text;
-            string moduleCode = comboBox1.Text;
-           
+            List<string> moduleCodes = new List<string>();
+
+            for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+            {
+                moduleCodes.Add(checkedListBox1.CheckedItems[i].ToString());
+            }
+            foreach (var item in moduleCodes)
+            {
+                MessageBox.Show(item.ToString());
+            }
+
             if (radioButton1.Checked==true)
             {
                 gender = 'M';
@@ -71,7 +80,7 @@ namespace PRG282_Project_Group3
             }
 
         
-            MessageBox.Show(businessLogic.checkCapture(StudentId, name, surname, studentImage, gender, dob, phone, address,moduleCode).ToString());
+            MessageBox.Show(businessLogic.checkCapture(StudentId, name, surname, studentImage, gender, dob, phone, address,moduleCodes).ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -88,6 +97,11 @@ namespace PRG282_Project_Group3
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
