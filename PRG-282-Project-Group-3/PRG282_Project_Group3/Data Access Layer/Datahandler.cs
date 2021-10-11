@@ -16,12 +16,12 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             string connectionString = @"Data Source=DESKTOP-T23DGMJ\SQLEXPRESS;Initial Catalog=PRG282_Project1;Integrated Security=True";
             this.connection = new SqlConnection(connectionString);
         }
-        
-        public void insertStudent(string StudentId, string name, string surname, Image studentImg, char gender,string dob ,string phone, string address)
+
+        public void insertStudent(string StudentId, string name, string surname, Image studentImg, char gender, string dob, string phone, string address)
         {
             connection.Open();
             //below values should be subbed with actual var after validation
-            string qryimgUpload =string.Format("INSERT INTO Students(StudentID,Name,Surname,StudentImage,Gender,DOB,Phone,StudentAddress) VALUES({0},'{1}','{2}',@P_Image,'{3}','{4}','{5}','{6}')", StudentId, name,surname,gender,dob,phone,address);
+            string qryimgUpload = string.Format("INSERT INTO Students(StudentID,Name,Surname,StudentImage,Gender,DOB,Phone,StudentAddress) VALUES({0},'{1}','{2}',@P_Image,'{3}','{4}','{5}','{6}')", StudentId, name, surname, gender, dob, phone, address);
             SqlCommand command = new SqlCommand(qryimgUpload, connection);
 
             Image image = studentImg;
@@ -60,15 +60,29 @@ namespace PRG282_Project_Group3.Data_Access_Layer
                         Image studentImage;
                         using (MemoryStream ms = new MemoryStream(imgData))
                         {
-                            
+                            studentImage = Image.FromStream(ms);
+                        }
+                        studentsList.Add(new Students(
+                            int.Parse(reader[0].ToString()),
+                            reader[1].ToString(),
+                            reader[2].ToString(),
+                            studentImage,
+                            char.Parse(reader[4].ToString()),
+                            reader[5].ToString(),
+                            reader[6].ToString(),
+                            reader[7].ToString()
+                            ));
                     }
                 }
+
             }
             connection.Close();
             return studentsList;
+
         }
     }
 }
+
 //⠀⠀⠀⠀⣠⣶⡾⠏⠉⠙⠳⢦⡀⠀⠀⠀⢠⠞⠉⠙⠉⠙⠲⡀⠀
 //⠀⠀⠀⣴⠿⠏⠀⠀⠀⠀⠀⠀ ⢳⡀⠀⡏⠀⠀⠀⠀ ⠀   ⢷
 //⠀⠀⢠⣟⣋⡀⢀⣀⣀⡀⠀⣀⡀⣧⠀⢸⠀⠀⠀⠀⠀     ⡇
