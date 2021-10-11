@@ -88,6 +88,10 @@ namespace PRG282_Project_Group3
 
                 if (function == 1)
                     MessageBox.Show("User updated successfully");
+
+                mainFrm main = new mainFrm();
+                main.ShowDialog();
+                this.Close();
             }
             else MessageBox.Show("Transaction failed");
         }

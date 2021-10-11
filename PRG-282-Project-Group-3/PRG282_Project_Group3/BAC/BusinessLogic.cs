@@ -47,7 +47,7 @@ namespace PRG282_Project_Group3.BAC
                             {
                                 Datahandler datahandler = new Datahandler();
                                 datahandler.updateStudents(StudentId, name, surname, studentImg, gender, dob, phone, address, moduleCodes);
-                                return false;
+                                return true;
                             }
                         }
                         else

@@ -32,6 +32,7 @@ namespace PRG282_Project_Group3
             studentsList=datahandler.getStudents();
             bs.DataSource = studentsList;
             dgvMain.DataSource = bs;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,6 +79,14 @@ namespace PRG282_Project_Group3
             int index = dgvMain.CurrentCell.RowIndex;
 
 
+        }
+
+        private void dgvMain_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string name, surname, gender, dob, phone, address;
+            string[] modules;
+            pbStudent.Image = studentsList[dgvMain.CurrentCell.RowIndex].StudentImage;
+            richTextBox1.Text = studentsList[dgvMain.CurrentCell.RowIndex].Name;
         }
     }
 }
