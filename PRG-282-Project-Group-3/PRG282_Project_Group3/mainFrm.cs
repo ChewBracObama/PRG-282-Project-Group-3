@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PRG282_Project_Group3.BAC;
+using PRG282_Project_Group3.Data_Access_Layer;
 
 namespace PRG282_Project_Group3
 {
     public partial class mainFrm : Form
     {
+        Datahandler dataHandler = new Datahandler();
+
+
         string[] modules = { "PRG281","DBD281","MAT282","WPR181","STA281","LPR282","MAT281"};
         List<Students> studentsList = new List<Students>();
         //public mainFrm(List<Students> students)
@@ -66,7 +70,7 @@ namespace PRG282_Project_Group3
 
         private void mainFrm_Load(object sender, EventArgs e)
         {
-
+            studentsList = dataHandler.getStudents();
         }
 
         private void pbStudent_Click(object sender, EventArgs e)
@@ -77,8 +81,9 @@ namespace PRG282_Project_Group3
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int index = dgvMain.CurrentCell.RowIndex;
+            int studentID = int.Parse(dgvMain[0,index].ToString());
 
-
+            
         }
     }
 }
