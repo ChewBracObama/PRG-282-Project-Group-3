@@ -34,7 +34,7 @@ namespace PRG282_Project_Group3.BAC
                         if (studentImg!=null && gender!='n' && address !="" && ModuleCode!="")
                         {
                             Datahandler datahandler =new Datahandler();
-                            datahandler.insertStudent(StudentId, name, "Erasmus", studentImg, gender,dob, phone, address);
+                            datahandler.insertStudent(StudentId, name, surname, studentImg, gender,dob, phone, address);
                             datahandler.insertModule(StudentId, ModuleCode);
                             return true;
                         }
