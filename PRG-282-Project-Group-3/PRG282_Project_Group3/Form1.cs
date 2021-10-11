@@ -24,13 +24,6 @@ namespace PRG282_Project_Group3
         {
             bool isUser = BusinessLogic.checkDetails(Filehandler.getUserDetails(), tbUsername.Text, mtbPass.Text);
 
-            if (isUser)
-            {
-                this.Hide();
-                mainFrm mainFrm = new mainFrm();
-                mainFrm.ShowDialog();
-                this.Close();
-            }
             if (!Filehandler.getUserDetails().Any<string>())
             {
                 MessageBox.Show("No users exist currently. Redirecting to the register page");
@@ -39,7 +32,20 @@ namespace PRG282_Project_Group3
                 RegisterForm registerForm = new RegisterForm();
                 registerForm.ShowDialog();
                 this.Close();
-            } else MessageBox.Show("Username or password is incorrect");
+            }
+
+            if (isUser)
+            {
+                this.Hide();
+                mainFrm mainFrm = new mainFrm();
+                mainFrm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Username or password is incorrect");
+            }
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
