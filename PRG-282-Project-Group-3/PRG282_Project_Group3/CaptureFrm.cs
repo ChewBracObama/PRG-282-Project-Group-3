@@ -14,6 +14,9 @@ namespace PRG282_Project_Group3
 {
     public partial class CaptureFrm : Form
     {
+        BusinessLogic businessLogic = new BusinessLogic();
+        Datahandler datahandler = new Datahandler();
+
         Image studentImage;
         public CaptureFrm()
         {
@@ -47,12 +50,8 @@ namespace PRG282_Project_Group3
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Datahandler datahandler = new Datahandler();
-          
             //List<Students> students = new List<Students>();
             // students= datahandler.getStudents();
-
-            BusinessLogic businessLogic = new BusinessLogic();
             string StudentId = textBox1.Text;
             string name = textBox2.Text;
             string surname = surnameTbox.Text;

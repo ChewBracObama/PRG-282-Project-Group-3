@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PRG282_Project_Group3.BAC;
 
 namespace PRG282_Project_Group3
 {
@@ -63,6 +64,13 @@ namespace PRG282_Project_Group3
 
         private void pbStudent_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int index = dgvMain.CurrentCell.RowIndex;
+
 
         }
     }

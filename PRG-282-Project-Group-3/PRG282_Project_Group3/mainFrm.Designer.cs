@@ -52,19 +52,17 @@ namespace PRG282_Project_Group3
             // dgvMain
             // 
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMain.Location = new System.Drawing.Point(241, 261);
-            this.dgvMain.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMain.Location = new System.Drawing.Point(181, 212);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
-            this.dgvMain.Size = new System.Drawing.Size(679, 260);
+            this.dgvMain.Size = new System.Drawing.Size(509, 211);
             this.dgvMain.TabIndex = 0;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(20, 443);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(15, 360);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(121, 28);
+            this.btnAdd.Size = new System.Drawing.Size(91, 23);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add New User";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -72,10 +70,9 @@ namespace PRG282_Project_Group3
             // 
             // pbStudent
             // 
-            this.pbStudent.Location = new System.Drawing.Point(643, 46);
-            this.pbStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.pbStudent.Location = new System.Drawing.Point(482, 37);
             this.pbStudent.Name = "pbStudent";
-            this.pbStudent.Size = new System.Drawing.Size(277, 190);
+            this.pbStudent.Size = new System.Drawing.Size(208, 154);
             this.pbStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStudent.TabIndex = 9;
             this.pbStudent.TabStop = false;
@@ -83,10 +80,9 @@ namespace PRG282_Project_Group3
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(16, 556);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 452);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(100, 28);
+            this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 21;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -94,10 +90,9 @@ namespace PRG282_Project_Group3
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(20, 375);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Location = new System.Drawing.Point(15, 305);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(121, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(91, 23);
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -105,97 +100,88 @@ namespace PRG282_Project_Group3
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(20, 311);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(15, 253);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(121, 28);
+            this.btnDelete.Size = new System.Drawing.Size(91, 23);
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete User";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(241, 46);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Location = new System.Drawing.Point(181, 37);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(392, 189);
+            this.richTextBox1.Size = new System.Drawing.Size(295, 154);
             this.richTextBox1.TabIndex = 24;
             this.richTextBox1.Text = "";
             // 
             // lblRichBox
             // 
             this.lblRichBox.AutoSize = true;
-            this.lblRichBox.Location = new System.Drawing.Point(237, 26);
-            this.lblRichBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRichBox.Location = new System.Drawing.Point(178, 21);
             this.lblRichBox.Name = "lblRichBox";
-            this.lblRichBox.Size = new System.Drawing.Size(120, 17);
+            this.lblRichBox.Size = new System.Drawing.Size(90, 13);
             this.lblRichBox.TabIndex = 25;
             this.lblRichBox.Text = "Student Summary";
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(12, 26);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSearch.Location = new System.Drawing.Point(9, 21);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(209, 17);
+            this.lblSearch.Size = new System.Drawing.Size(159, 13);
             this.lblSearch.TabIndex = 26;
             this.lblSearch.Text = "Search by Student ID or Module";
             // 
             // tbSearch
             // 
-            this.tbSearch.Location = new System.Drawing.Point(16, 59);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSearch.Location = new System.Drawing.Point(12, 48);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(207, 22);
+            this.tbSearch.Size = new System.Drawing.Size(156, 20);
             this.tbSearch.TabIndex = 27;
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(241, 528);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLast.Location = new System.Drawing.Point(181, 429);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(92, 57);
+            this.btnLast.Size = new System.Drawing.Size(69, 46);
             this.btnLast.TabIndex = 29;
             this.btnLast.Text = "Last index";
             this.btnLast.UseVisualStyleBackColor = true;
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(828, 528);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFirst.Location = new System.Drawing.Point(621, 429);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(92, 57);
+            this.btnFirst.Size = new System.Drawing.Size(69, 46);
             this.btnFirst.TabIndex = 30;
             this.btnFirst.Text = "First Index";
             this.btnFirst.UseVisualStyleBackColor = true;
             // 
             // btnPrev
             // 
-            this.btnPrev.Location = new System.Drawing.Point(447, 534);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrev.Location = new System.Drawing.Point(335, 434);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(80, 44);
+            this.btnPrev.Size = new System.Drawing.Size(60, 36);
             this.btnPrev.TabIndex = 31;
             this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(601, 534);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNext.Location = new System.Drawing.Point(451, 434);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(80, 44);
+            this.btnNext.Size = new System.Drawing.Size(60, 36);
             this.btnNext.TabIndex = 32;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(12, 74);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 33;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
@@ -203,19 +189,18 @@ namespace PRG282_Project_Group3
             // lblImage
             // 
             this.lblImage.AutoSize = true;
-            this.lblImage.Location = new System.Drawing.Point(639, 26);
-            this.lblImage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblImage.Location = new System.Drawing.Point(479, 21);
             this.lblImage.Name = "lblImage";
-            this.lblImage.Size = new System.Drawing.Size(99, 17);
+            this.lblImage.Size = new System.Drawing.Size(76, 13);
             this.lblImage.TabIndex = 34;
             this.lblImage.Text = "Student Image";
             // 
             // mainFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.ClientSize = new System.Drawing.Size(941, 599);
+            this.ClientSize = new System.Drawing.Size(706, 487);
             this.Controls.Add(this.lblImage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNext);
@@ -232,7 +217,6 @@ namespace PRG282_Project_Group3
             this.Controls.Add(this.pbStudent);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvMain);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainFrm";
             this.Text = "CRUD Operations";
             this.Load += new System.EventHandler(this.mainFrm_Load);
