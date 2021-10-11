@@ -53,7 +53,7 @@ namespace PRG282_Project_Group3
             // 
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMain.Location = new System.Drawing.Point(241, 261);
-            this.dgvMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvMain.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
             this.dgvMain.Size = new System.Drawing.Size(679, 260);
@@ -62,7 +62,7 @@ namespace PRG282_Project_Group3
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(20, 443);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(121, 28);
             this.btnAdd.TabIndex = 4;
@@ -73,17 +73,18 @@ namespace PRG282_Project_Group3
             // pbStudent
             // 
             this.pbStudent.Location = new System.Drawing.Point(643, 46);
-            this.pbStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStudent.Margin = new System.Windows.Forms.Padding(4);
             this.pbStudent.Name = "pbStudent";
             this.pbStudent.Size = new System.Drawing.Size(277, 190);
             this.pbStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStudent.TabIndex = 9;
             this.pbStudent.TabStop = false;
+            this.pbStudent.Click += new System.EventHandler(this.pbStudent_Click);
             // 
             // btnLogOut
             // 
             this.btnLogOut.Location = new System.Drawing.Point(16, 556);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(100, 28);
             this.btnLogOut.TabIndex = 21;
@@ -94,7 +95,7 @@ namespace PRG282_Project_Group3
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(20, 375);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(121, 28);
             this.btnUpdate.TabIndex = 22;
@@ -105,7 +106,7 @@ namespace PRG282_Project_Group3
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(20, 311);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 28);
             this.btnDelete.TabIndex = 23;
@@ -115,7 +116,7 @@ namespace PRG282_Project_Group3
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(241, 46);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(392, 189);
             this.richTextBox1.TabIndex = 24;
@@ -144,7 +145,7 @@ namespace PRG282_Project_Group3
             // tbSearch
             // 
             this.tbSearch.Location = new System.Drawing.Point(16, 59);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(207, 22);
             this.tbSearch.TabIndex = 27;
@@ -152,7 +153,7 @@ namespace PRG282_Project_Group3
             // btnLast
             // 
             this.btnLast.Location = new System.Drawing.Point(241, 528);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(92, 57);
             this.btnLast.TabIndex = 29;
@@ -162,7 +163,7 @@ namespace PRG282_Project_Group3
             // btnFirst
             // 
             this.btnFirst.Location = new System.Drawing.Point(828, 528);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(4);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(92, 57);
             this.btnFirst.TabIndex = 30;
@@ -172,7 +173,7 @@ namespace PRG282_Project_Group3
             // btnPrev
             // 
             this.btnPrev.Location = new System.Drawing.Point(447, 534);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(80, 44);
             this.btnPrev.TabIndex = 31;
@@ -182,7 +183,7 @@ namespace PRG282_Project_Group3
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(601, 534);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(80, 44);
             this.btnNext.TabIndex = 32;
@@ -192,7 +193,7 @@ namespace PRG282_Project_Group3
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(16, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 33;
@@ -231,7 +232,7 @@ namespace PRG282_Project_Group3
             this.Controls.Add(this.pbStudent);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainFrm";
             this.Text = "CRUD Operations";
             this.Load += new System.EventHandler(this.mainFrm_Load);
