@@ -37,14 +37,7 @@ namespace PRG282_Project_Group3
 
         private void btnUploadImg_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"C:\Pictures\";
-            ofd.ShowDialog();
-        
-            
-           // pbStudent = image;
 
-            pbStudent.ImageLocation = ofd.FileName;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

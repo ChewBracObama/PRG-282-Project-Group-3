@@ -36,10 +36,11 @@ namespace PRG282_Project_Group3.BAC
                 {
                     if ((regexNum.IsMatch(phone) == true)&& (phone.Length==10)&& phone!=null)
                     {
-                        if (studentImg!=null && gender!='n' && address !="" && ModuleCode!=null)
+                        if (studentImg!=null && gender!='n' && address !="" && ModuleCode!="")
                         {
                             Datahandler datahandler =new Datahandler();
-                            datahandler.insertStudent(StudentId, name, "Erasmus", studentImg, gender,dob, phone, address, "PRG282");
+                            datahandler.insertStudent(StudentId, name, "Erasmus", studentImg, gender,dob, phone, address);
+                            datahandler.insertModule(StudentId, ModuleCode);
                             return true;
                         }
                         else
