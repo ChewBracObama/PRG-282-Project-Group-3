@@ -67,6 +67,7 @@ namespace PRG282_Project_Group3
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(367, 20);
             this.tbUsername.TabIndex = 0;
+            this.tbUsername.Text = "Testing";
             // 
             // pictureBox1
             // 
@@ -114,6 +115,7 @@ namespace PRG282_Project_Group3
             this.mtbPass.PasswordChar = '*';
             this.mtbPass.Size = new System.Drawing.Size(367, 20);
             this.mtbPass.TabIndex = 8;
+            this.mtbPass.Text = "test1234";
             // 
             // Form1
             // 
