@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PRG282_Project_Group3.BAC;
+using PRG282_Project_Group3.Data_Access_Layer;
 
 namespace PRG282_Project_Group3
 {
@@ -15,6 +16,8 @@ namespace PRG282_Project_Group3
     {
         string[] modules = { "PRG281","DBD281","MAT282","WPR181","STA281","LPR282","MAT281"};
         List<Students> studentsList = new List<Students>();
+        BindingSource bs = new BindingSource();
+        Datahandler datahandler = new Datahandler();
         //public mainFrm(List<Students> students)
         //{
         //    studentsList = students;                               // testing list pass from capture
@@ -26,6 +29,9 @@ namespace PRG282_Project_Group3
         public mainFrm()
         {
             InitializeComponent();
+            studentsList=datahandler.getStudents();
+            bs.DataSource = studentsList;
+            dgvMain.DataSource = bs;
         }
 
         private void button1_Click(object sender, EventArgs e)
