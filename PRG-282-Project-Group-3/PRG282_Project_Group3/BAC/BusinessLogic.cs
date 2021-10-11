@@ -22,7 +22,7 @@ namespace PRG282_Project_Group3.BAC
             return result;
         }
 
-        public bool checkCapture(string StudentId, string name, string surname, Image studentImg, char gender, string dob, string phone, string address, List<string> moduleCodes)
+        public bool checkCapture(string StudentId, string name, string surname, Image studentImg, char gender, string dob, string phone, string address, List<string> moduleCodes, int function)
         {
             Regex regexNum = new Regex("^[0-9]+$");
             Regex regexWords = new Regex(@"^[a-zA-Z]+$");
@@ -34,13 +34,21 @@ namespace PRG282_Project_Group3.BAC
                     {
                         if (studentImg!=null && gender!='n' && address !="" && moduleCodes.Count>0)
                         {
-                            Datahandler datahandler =new Datahandler();
-                            datahandler.insertStudent(StudentId, name, surname, studentImg, gender,dob, phone, address);
-                            foreach (var item in moduleCodes)
+                            if (function == 0)
                             {
-                                datahandler.insertModule(StudentId, item);
+                                Datahandler datahandler = new Datahandler();
+                                datahandler.insertStudent(StudentId, name, surname, studentImg, gender, dob, phone, address);
+                                foreach (var item in moduleCodes)
+                                {
+                                    datahandler.insertModule(StudentId, item);
+                                }
+                                return true;
+                            }else
+                            {
+                                Datahandler datahandler = new Datahandler();
+                                datahandler.updateStudents(StudentId, name, surname, studentImg, gender, dob, phone, address, moduleCodes);
+                                return false;
                             }
-                            return true;
                         }
                         else
                         {

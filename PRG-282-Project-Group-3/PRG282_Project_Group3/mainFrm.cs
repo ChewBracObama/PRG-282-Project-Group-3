@@ -31,7 +31,7 @@ namespace PRG282_Project_Group3
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CaptureFrm captureFrm = new CaptureFrm();
+            CaptureFrm captureFrm = new CaptureFrm(0);
             captureFrm.ShowDialog();
             this.Close();
         }
@@ -52,7 +52,7 @@ namespace PRG282_Project_Group3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CaptureFrm captureFrm = new CaptureFrm();
+            CaptureFrm captureFrm = new CaptureFrm(1);
             captureFrm.ShowDialog();
             this.Close();
         }

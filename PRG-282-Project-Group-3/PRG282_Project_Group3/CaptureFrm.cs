@@ -17,10 +17,12 @@ namespace PRG282_Project_Group3
         BusinessLogic businessLogic = new BusinessLogic();
         Datahandler datahandler = new Datahandler();
 
+        int function = 0;
         Image studentImage;
-        public CaptureFrm()
+        public CaptureFrm(int var)
         {
             InitializeComponent();
+            function = var;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace PRG282_Project_Group3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             //List<Students> students = new List<Students>();
             // students= datahandler.getStudents();
             string StudentId = textBox1.Text;
@@ -79,8 +81,15 @@ namespace PRG282_Project_Group3
                 gender = 'F';
             }
 
-        
-            MessageBox.Show(businessLogic.checkCapture(StudentId, name, surname, studentImage, gender, dob, phone, address,moduleCodes).ToString());
+            if (businessLogic.checkCapture(StudentId, name, surname, studentImage, gender, dob, phone, address, moduleCodes, function))
+            {
+                if (function == 0)
+                    MessageBox.Show("User added successfully");
+
+                if (function == 1)
+                    MessageBox.Show("User updated successfully");
+            }
+            else MessageBox.Show("Transaction failed");
         }
 
         private void button3_Click(object sender, EventArgs e)
