@@ -7,7 +7,7 @@ namespace PRG282_Project_Group3
 {
     public partial class RegisterForm : Form
     {
-        Filehandler fileHandler = new Filehandler();
+        private Filehandler fileHandler = new Filehandler();
 
         public RegisterForm()
         {

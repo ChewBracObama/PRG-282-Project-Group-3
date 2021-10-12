@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows.Forms;
-using System.IO;
 
 namespace PRG282_Project_Group3.Data_Access_Layer
 {
-    class Filehandler
+    internal class Filehandler
     {
         public static string[] getUserDetails()
         {
@@ -21,8 +16,8 @@ namespace PRG282_Project_Group3.Data_Access_Layer
                 return details;
             }
             return new string[] { };
-
         }
+
         private static bool checkFileExists(string path)
         {
             if (!File.Exists(path))

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PRG282_Project_Group3
+﻿namespace PRG282_Project_Group3
 {
    public class Modules
     {
@@ -13,10 +7,8 @@ namespace PRG282_Project_Group3
         private string description;
         private string link;
 
-
         public Modules()
         {
-
         }
 
         public Modules(string code, string name, string description, string link)
