@@ -15,7 +15,8 @@ namespace PRG282_Project_Group3.Data_Access_Layer
         {
             //Aiden// string connectionString = @"Data Source=DESKTOP-T23DGMJ\SQLEXPRESS;Initial Catalog=PRG282_Project1;Integrated Security=True";
             //Martin // string connectionString = @"Data Source=DESKTOP-DMOGBGT\MSSQLSERVERBLG;Initial Catalog=PRG282_Project1;Integrated Security=True";
-            string connectionString = @"Data Source=HADES;Initial Catalog=PRG282_Project1;Integrated Security=True";
+            //Bhamm // string connectionString = @"Data Source=HADES;Initial Catalog=PRG282_Project1;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-DMOGBGT\MSSQLSERVERBLG;Initial Catalog=PRG282_Project1;Integrated Security=True";
             this.connection = new SqlConnection(connectionString);
         }
 
@@ -36,6 +37,7 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             command.ExecuteNonQuery();
             connection.Close();
         }
+
         public void insertModule(string StudentId, string ModuleCode)
         {
             connection.Open();
@@ -46,14 +48,55 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             connection.Close();
         }
 
+        public List<Modules> getModules()
+        {
+            List<Modules> ModuleList = new List<Modules>();
+            string querygetModule = "SELECT * FROM Modules;";
+            SqlCommand getModule_cmd = new SqlCommand(querygetModule, connection);
+            using (var moduleReader = getModule_cmd.ExecuteReader())
+            {
+                while (moduleReader.Read())
+                {
+                    if (true)
+                    {
+                        ModuleList.Add(new Modules(moduleReader[0].ToString(), moduleReader[1].ToString(), moduleReader[2].ToString(), moduleReader[3].ToString()));
+                    }
+                }
+
+            }
+            return ModuleList;
+        }
+
+
+        public List<JoiningTable> getJoiningTable(int StudentId)
+        {
+            List<JoiningTable> StudentModuleList = new List<JoiningTable>();
+            string querygetModule = string.Format("SELECT * FROM StudentsModules WHERE StudentID={0};", StudentId);
+            SqlCommand getModule_cmd = new SqlCommand(querygetModule, connection);
+            connection.Open();
+            using (var moduleReader = getModule_cmd.ExecuteReader())
+            {
+                while (moduleReader.Read())
+                {
+                        StudentModuleList.Add(new JoiningTable(int.Parse(moduleReader[0].ToString()),int.Parse(moduleReader[1].ToString()), moduleReader[2].ToString()));
+                }
+
+            }
+            connection.Close();
+            return StudentModuleList;
+       
+        }
         public List<Students> getStudents()
         {
             List<Students> studentsList = new List<Students>();
+     
             string query = "SELECT * FROM Students;";
+
             if (connection.State != ConnectionState.Open)
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
+
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -64,6 +107,8 @@ namespace PRG282_Project_Group3.Data_Access_Layer
                         {
                             studentImage = Image.FromStream(ms);
                         }
+
+
                         studentsList.Add(new Students(
                             int.Parse(reader[0].ToString()),
                             reader[1].ToString(),
@@ -76,11 +121,9 @@ namespace PRG282_Project_Group3.Data_Access_Layer
                             ));
                     }
                 }
-
             }
             connection.Close();
             return studentsList;
-
         }
 
         public void updateStudents(string studentID, string name, string surname, Image img, char gender, string dob, string phone, string address, List<string> modules)
@@ -108,6 +151,49 @@ namespace PRG282_Project_Group3.Data_Access_Layer
                 insertModule(studentID, item);
             }
         }
+
+        public void deleteStudent(int StudentID)
+        {
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+
+                string deleteModulequery = $"DELETE FROM StudentsModules WHERE StudentID = {StudentID}";
+                SqlCommand cmd = new SqlCommand(deleteModulequery, connection);
+
+                cmd.ExecuteNonQuery();
+
+                string query = $"DELETE FROM Students WHERE StudentID = {StudentID}";
+                cmd.CommandText = query;
+
+                cmd.ExecuteNonQuery();
+                ;
+            }
+            connection.Close();
+        }
+        //public List<Modules> getModules()
+        //{
+        //    List<Modules> moduleList = new List<Modules>();
+
+        //    string query = "SELECT * FROM Modules";
+
+        //    if (connection.State != ConnectionState.Open)
+        //    {
+        //        connection.Open();
+
+        //        SqlCommand cmd = new SqlCommand(query,connection);
+
+        //        using (var reader = cmd.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                moduleList.Add(new Modules(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString())) ;
+        //            }
+        //        }
+        //    }
+
+        //    return moduleList;
+        //}
     }
 }
 
@@ -123,7 +209,6 @@ namespace PRG282_Project_Group3.Data_Access_Layer
 //⢀⣾⣽⣿⣿⣿⣿⠛⢲⣶⣾⢉⡷⣿⣿⠵⣿⠀⠀⠀⠀⠀⠀
 //⣼⣿⠍⠉⣿⡭⠉⠙⢺⣇⣼⡏⠀⠀⠀⣄⢸⠀⠀⠀⠀⠀⠀
 //⣿⣿⣧⣀⣿.........⣀⣰⣏⣘⣆⣀
-
 
 //░░░░░░░░░░▒▒░░░░░░░░░░░░░░░░░░░░░░░░  ░░░░░░  ░░░░░░      ░░  ░░  ░░░░░░░░░░░░  ▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓██████████████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░▒▒
 //▒▒░░░░░░░░░░░░░░▒▒░░░░░░░░              ░░      ░░░░░░            ▒▒░░░░░░░░      ▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████████▓▓██▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓░░░░▓▓▓▓▒▒▒▒
@@ -155,12 +240,12 @@ namespace PRG282_Project_Group3.Data_Access_Layer
 //░░░░░░    ░░▒▒  ░░░░░░░░░░░░▓▓▓▓▒▒▒▒░░░░▒▒▒▒▓▓░░░░▒▒▒▒░░░░░░▒▒▒▒▒▒░░    ░░      ░░▒▒░░░░░░████▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒░░██▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░▓▓▒▒░░▒▒▒▒░░░░░░░░
 //░░              ░░░░▒▒▒▒░░░░▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░░░░░░  ░░░░▒▒▒▒░░░░░░          ░░░░░░░░▒▒████▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░░▒▒██▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒░░▒▒░░░░░░░░░░░░
 //    ░░        ░░░░░░  ░░░░▒▒▒▒▒▒░░░░▒▒░░▒▒▒▒░░▓▓▓▓░░░░░░░░░░▒▒▒▒▒▒▒▒░░░░░░░░░░        ░░░░░░    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒████▓▓▓▓▒▒▒▒░░▒▒░░▒▒▒▒▒▒░░░░  ░░░░░░░░
-//░░░░      ░░    ░░▒▒▒▒░░▒▒▒▒░░░░░░▒▒░░░░░░▒▒░░░░▓▓▒▒░░░░▒▒░░▒▒░░▒▒▒▒▒▒░░░░        ░░▒▒        ░░░░░░▒▒░░░░░░░░░░░░▓▓                ░░░░░░░░░░░░░░░░░░░░░░░░▒▒    ░░▒▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒░░░░░░  ░░  ░░  
-//░░▒▒░░  ░░░░    ░░░░░░▒▒▒▒░░░░▒▒░░░░░░░░░░░░▒▒░░▓▓▓▓░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░      ░░░░░░░░▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▓▓▓▓░░░░░░░░░░░░░░▓▓░░  ░░  ▒▒▒▒░░▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░        
+//░░░░      ░░    ░░▒▒▒▒░░▒▒▒▒░░░░░░▒▒░░░░░░▒▒░░░░▓▓▒▒░░░░▒▒░░▒▒░░▒▒▒▒▒▒░░░░        ░░▒▒        ░░░░░░▒▒░░░░░░░░░░░░▓▓                ░░░░░░░░░░░░░░░░░░░░░░░░▒▒    ░░▒▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒░░░░░░  ░░  ░░
+//░░▒▒░░  ░░░░    ░░░░░░▒▒▒▒░░░░▒▒░░░░░░░░░░░░▒▒░░▓▓▓▓░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░      ░░░░░░░░▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▓▓▓▓░░░░░░░░░░░░░░▓▓░░  ░░  ▒▒▒▒░░▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░
 //▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░▓▓▒▒▓▓▓▓░░▒▒░░░░▒▒░░░░░░░░▒▒░░░░  ░░░░░░░░  ░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░░░░░░░░░░░░  ░░      ░░▒▒▒▒▒▒░░▒▒░░░░▒▒▒▒▓▓▒▒░░░░░░    ░░
 //░░  ░░░░▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒░░▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓░░▒▒░░░░  ░░  ░░▒▒▒▒▒▒░░░░  ░░░░░░░░░░░░░░  ░░░░░░  ░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░░░░░░░░░░░▒▒          ▓▓▒▒▒▒░░░░░░░░░░░░░░░░░░    ░░░░░░░░
 //  ░░░░░░▒▒▒▒▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▓▓▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒░░  ░░    ░░  ░░░░░░░░░░░░░░▒▒░░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒░░  ░░  ░░░░▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░      ░░░░    ░░
-//░░░░░░░░░░░░░░░░▒▒▒▒░░░░▒▒▒▒░░░░░░▒▒▒▒▒▒░░░░░░▒▒▓▓▓▓░░░░░░░░░░  ░░░░░░░░▒▒░░░░░░▒▒▒▒▒▒░░▒▒░░░░░░░░░░░░░░░░  ▒▒░░░░░░░░░░░░░░    ░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░        ░░▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒░░░░░░░░      ░░  
+//░░░░░░░░░░░░░░░░▒▒▒▒░░░░▒▒▒▒░░░░░░▒▒▒▒▒▒░░░░░░▒▒▓▓▓▓░░░░░░░░░░  ░░░░░░░░▒▒░░░░░░▒▒▒▒▒▒░░▒▒░░░░░░░░░░░░░░░░  ▒▒░░░░░░░░░░░░░░    ░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░        ░░▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒░░░░░░░░      ░░
 //▒▒░░  ░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▓▓▓▓▓▓▒▒░░▒▒▒▒░░░░▒▒▒▒░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░░░░░▒▒░░░░  ▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░  ░░░░▒▒▒▒░░░░        ▒▒░░░░░░▒▒░░▒▒░░░░░░░░░░░░    ░░░░░░
 //░░  ░░░░▒▒░░░░░░▒▒▒▒▒▒░░▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒░░▓▓▓▓▓▓▒▒░░░░▒▒░░░░░░░░░░░░▒▒▒▒▓▓▒▒░░░░▒▒▒▒▒▒▒▒░░  ░░░░        ░░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░        ░░▓▓▓▓▓▓▒▒▒▒░░░░░░░░▒▒░░  ░░░░░░  ░░░░
 //░░  ░░▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒░░░░░░▒▒▒▒░░░░░░░░░░░░▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒░░░░░░░░░░░░░░▒▒▒▒░░░░▒▒▒▒░░░░  ▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒░░░░░░░░▒▒▒▒░░        ░░▓▓██▓▓░░░░░░░░▒▒░░░░░░░░░░░░    ░░░░
