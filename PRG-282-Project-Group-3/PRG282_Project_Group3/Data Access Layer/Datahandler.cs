@@ -16,7 +16,7 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             //Aiden// string connectionString = @"Data Source=DESKTOP-T23DGMJ\SQLEXPRESS;Initial Catalog=PRG282_Project1;Integrated Security=True";
             //Martin // string connectionString = @"Data Source=DESKTOP-DMOGBGT\MSSQLSERVERBLG;Initial Catalog=PRG282_Project1;Integrated Security=True";
             //Bhamm // string connectionString = @"Data Source=HADES;Initial Catalog=PRG282_Project1;Integrated Security=True";
-            string connectionString = @"Data Source=DESKTOP-T23DGMJ\SQLEXPRESS;Initial Catalog=PRG282_Project1;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-DMOGBGT\MSSQLSERVERBLG;Initial Catalog=PRG282_Project1;Integrated Security=True";
             this.connection = new SqlConnection(connectionString);
         }
 
@@ -113,11 +113,21 @@ namespace PRG282_Project_Group3.Data_Access_Layer
         {
             if (connection.State != ConnectionState.Open)
             {
+
+
                 connection.Open();
+
+                string deleteModulequery = $"DELETE FROM StudentsModules WHERE StudentID = {StudentID}";
+                SqlCommand cmd = new SqlCommand(deleteModulequery, connection);
+               
+                cmd.ExecuteNonQuery();
+
                 string query = $"DELETE FROM Students WHERE StudentID = {StudentID}";
-                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.CommandText = query;
+
 
                 cmd.ExecuteNonQuery();
+;
             }
             connection.Close();
         }
