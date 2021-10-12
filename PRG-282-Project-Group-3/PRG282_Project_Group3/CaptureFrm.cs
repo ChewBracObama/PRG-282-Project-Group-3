@@ -54,12 +54,12 @@ namespace PRG282_Project_Group3
             if (ofd.FileName != "")
             {
                 studentImage = Image.FromFile(ofd.FileName);
-                btnImg.BackColor = Color.Green;
-                btnImg.Text = "Uploaded";
+                btnImgUpload.BackColor = Color.Green;
+                btnImgUpload.Text = "Uploaded";
             }
             else
             {
-                btnImg.BackColor = Color.Red;
+                btnImgUpload.BackColor = Color.Red;
             }
         }
 
@@ -86,11 +86,11 @@ namespace PRG282_Project_Group3
                 MessageBox.Show(item.ToString());
             }
 
-            if (rbtnMale.Checked==true)
+            if (rbtnMale.Checked == true)
             {
                 gender = 'M';
             }
-            else if(rbtnFemale.Checked==true)
+            else if (rbtFemale.Checked == true)
             {
                 gender = 'F';
             }
