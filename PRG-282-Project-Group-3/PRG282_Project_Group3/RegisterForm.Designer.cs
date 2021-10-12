@@ -39,6 +39,7 @@ namespace PRG282_Project_Group3
             this.tbxPassRepeat = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@ namespace PRG282_Project_Group3
             this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnRegister.Location = new System.Drawing.Point(180, 459);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(203, 46);
             this.btnRegister.TabIndex = 4;
@@ -92,7 +93,7 @@ namespace PRG282_Project_Group3
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnBack.Location = new System.Drawing.Point(180, 528);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(203, 46);
             this.btnBack.TabIndex = 5;
@@ -116,7 +117,7 @@ namespace PRG282_Project_Group3
             // tbxUsername
             // 
             this.tbxUsername.Location = new System.Drawing.Point(41, 267);
-            this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(488, 22);
             this.tbxUsername.TabIndex = 0;
@@ -124,7 +125,7 @@ namespace PRG282_Project_Group3
             // tbxPass
             // 
             this.tbxPass.Location = new System.Drawing.Point(41, 340);
-            this.tbxPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPass.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPass.Name = "tbxPass";
             this.tbxPass.PasswordChar = '*';
             this.tbxPass.Size = new System.Drawing.Size(488, 22);
@@ -133,7 +134,7 @@ namespace PRG282_Project_Group3
             // tbxPassRepeat
             // 
             this.tbxPassRepeat.Location = new System.Drawing.Point(41, 411);
-            this.tbxPassRepeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPassRepeat.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPassRepeat.Name = "tbxPassRepeat";
             this.tbxPassRepeat.PasswordChar = '*';
             this.tbxPassRepeat.Size = new System.Drawing.Size(488, 22);
@@ -143,7 +144,7 @@ namespace PRG282_Project_Group3
             // 
             this.pictureBox1.Image = global::PRG282_Project_Group3.Properties.Resources.kissclipart_join_our_team_clipart_youtube_clip_art_83f9c5a9710d28ab;
             this.pictureBox1.Location = new System.Drawing.Point(48, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(483, 220);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,12 +164,22 @@ namespace PRG282_Project_Group3
             this.label1.TabIndex = 11;
             this.label1.Text = "Repeat Password";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(63, 477);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "label4";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(569, 583);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbxPassRepeat);
@@ -180,7 +191,7 @@ namespace PRG282_Project_Group3
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -200,5 +211,6 @@ namespace PRG282_Project_Group3
         private System.Windows.Forms.TextBox tbxPassRepeat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -45,6 +45,7 @@ namespace PRG282_Project_Group3
             this.btnNext = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblImage = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStudent)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@ namespace PRG282_Project_Group3
             // 
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMain.Location = new System.Drawing.Point(241, 261);
-            this.dgvMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvMain.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
             this.dgvMain.Size = new System.Drawing.Size(679, 260);
@@ -68,7 +69,7 @@ namespace PRG282_Project_Group3
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnAdd.Location = new System.Drawing.Point(20, 443);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(121, 28);
             this.btnAdd.TabIndex = 4;
@@ -79,7 +80,7 @@ namespace PRG282_Project_Group3
             // pbStudent
             // 
             this.pbStudent.Location = new System.Drawing.Point(643, 46);
-            this.pbStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStudent.Margin = new System.Windows.Forms.Padding(4);
             this.pbStudent.Name = "pbStudent";
             this.pbStudent.Size = new System.Drawing.Size(277, 190);
             this.pbStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,7 +95,7 @@ namespace PRG282_Project_Group3
             this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnLogOut.Location = new System.Drawing.Point(16, 556);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(100, 28);
             this.btnLogOut.TabIndex = 21;
@@ -110,7 +111,7 @@ namespace PRG282_Project_Group3
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnUpdate.Location = new System.Drawing.Point(20, 375);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(121, 28);
             this.btnUpdate.TabIndex = 22;
@@ -125,7 +126,7 @@ namespace PRG282_Project_Group3
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnDelete.Location = new System.Drawing.Point(20, 311);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 28);
             this.btnDelete.TabIndex = 23;
@@ -136,7 +137,7 @@ namespace PRG282_Project_Group3
             // rtbxSummary
             // 
             this.rtbxSummary.Location = new System.Drawing.Point(241, 46);
-            this.rtbxSummary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbxSummary.Margin = new System.Windows.Forms.Padding(4);
             this.rtbxSummary.Name = "rtbxSummary";
             this.rtbxSummary.Size = new System.Drawing.Size(392, 189);
             this.rtbxSummary.TabIndex = 24;
@@ -167,7 +168,7 @@ namespace PRG282_Project_Group3
             // tbSearch
             // 
             this.tbSearch.Location = new System.Drawing.Point(16, 59);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(207, 22);
             this.tbSearch.TabIndex = 27;
@@ -179,7 +180,7 @@ namespace PRG282_Project_Group3
             this.btnLast.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnLast.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnLast.Location = new System.Drawing.Point(241, 528);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(92, 57);
             this.btnLast.TabIndex = 29;
@@ -193,7 +194,7 @@ namespace PRG282_Project_Group3
             this.btnFirst.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnFirst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnFirst.Location = new System.Drawing.Point(828, 528);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(4);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(92, 57);
             this.btnFirst.TabIndex = 30;
@@ -207,7 +208,7 @@ namespace PRG282_Project_Group3
             this.btnPrev.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnPrev.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnPrev.Location = new System.Drawing.Point(447, 534);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(80, 44);
             this.btnPrev.TabIndex = 31;
@@ -221,7 +222,7 @@ namespace PRG282_Project_Group3
             this.btnNext.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.btnNext.Location = new System.Drawing.Point(601, 534);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(80, 44);
             this.btnNext.TabIndex = 32;
@@ -235,7 +236,7 @@ namespace PRG282_Project_Group3
             this.button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.button1.Location = new System.Drawing.Point(16, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 33;
@@ -253,12 +254,22 @@ namespace PRG282_Project_Group3
             this.lblImage.TabIndex = 34;
             this.lblImage.Text = "Student Image";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "label1";
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(941, 599);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblImage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNext);
@@ -275,7 +286,7 @@ namespace PRG282_Project_Group3
             this.Controls.Add(this.pbStudent);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainFrm";
             this.Text = "CRUD Operations";
             this.Load += new System.EventHandler(this.mainFrm_Load);
@@ -304,5 +315,6 @@ namespace PRG282_Project_Group3
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblImage;
+        private System.Windows.Forms.Label label1;
     }
 }
