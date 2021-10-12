@@ -12,6 +12,7 @@ namespace PRG282_Project_Group3
 
         private string[] modules = { "PRG281", "DBD281", "MAT282", "WPR181", "STA281", "LPR282", "MAT281" };
         private List<Students> studentsList = new List<Students>();
+        private List<Modules> moduleList = new List<Modules>();
         private BindingSource bs = new BindingSource();
         private BusinessLogic businessLogic = new BusinessLogic();
         private Datahandler datahandler = new Datahandler();
@@ -28,6 +29,7 @@ namespace PRG282_Project_Group3
         {
             InitializeComponent();
             studentsList = datahandler.getStudents();
+            moduleList = datahandler.getModules();
             bs.DataSource = studentsList;
             dgvMain.DataSource = bs;
         }
@@ -95,9 +97,22 @@ namespace PRG282_Project_Group3
         {
             //Consider changing RichTextBox to a listview to display easier
             string studID,name, surname, gender, dob, phone, address;
-
+            int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
             rtbxSummary.Clear();
-            rtbxSummary.Text = studentsList[dgvMain.CurrentCell.RowIndex].StudentID.ToString();
+            rtbxSummary.Text = rtbxSummary.Text = $"Student Number:\t{studentsList[index].StudentID}\nStudent Name:\t{studentsList[index].Name}\nStudent Surname:\t{studentsList[index].Surname}\nStudent Cell:\t{studentsList[index].Phone}";
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int searchID = int.Parse(tbSearch.Text);
+            foreach (var item in studentsList)
+            {
+                if (item.StudentID == searchID)
+                {
+                    rtbxSummary.Text = $"Student Number:\t{item.StudentID}\nStudent Name:\t{item.Name}\nStudent Surname:\t{item.Surname}\nStudent Cell:\t{item.Phone}";
+                }
+            }
         }
     }
 }

@@ -9,6 +9,8 @@ namespace PRG282_Project_Group3
 {
    public class Students
     {
+        List<Modules> moduleList = new List<Modules>();
+
         int studentID;
         string name;
         string surname;
