@@ -61,7 +61,9 @@ namespace PRG282_Project_Group3.BAC
 
         public void DeleteUser(int StudentID)
         {
-            string query = "DELETE * FROM Students WHERE StudentID = {StudentID}"
+            //string query = $"DELETE * FROM Students WHERE StudentID = {StudentID}";
+
+
         }
     }
 }
