@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRG282_Project_Group3
 {
-    class Modules
+   public class Modules
     {
         private string code;
         private string name;

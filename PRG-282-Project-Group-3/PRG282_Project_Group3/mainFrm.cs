@@ -12,7 +12,8 @@ namespace PRG282_Project_Group3
 
         private string[] modules = { "PRG281", "DBD281", "MAT282", "WPR181", "STA281", "LPR282", "MAT281" };
         private List<Students> studentsList = new List<Students>();
-        private List<Modules> moduleList = new List<Modules>();
+      //  private List<Modules> moduleList = new List<Modules>();
+        private List<JoiningTable> studentModules = new List<JoiningTable>(); //////////testing
         private BindingSource bs = new BindingSource();
         private BusinessLogic businessLogic = new BusinessLogic();
         private Datahandler datahandler = new Datahandler();
@@ -29,7 +30,7 @@ namespace PRG282_Project_Group3
         {
             InitializeComponent();
             studentsList = datahandler.getStudents();
-            moduleList = datahandler.getModules();
+          //  moduleList = datahandler.getModules();
             bs.DataSource = studentsList;
             dgvMain.DataSource = bs;
         }
@@ -87,10 +88,7 @@ namespace PRG282_Project_Group3
 
         private void dgvMain_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            string name, surname, gender, dob, phone, address;
-            string[] modules;
-            pbStudent.Image = studentsList[dgvMain.CurrentCell.RowIndex].StudentImage;
-            rtbxSummary.Text = studentsList[dgvMain.CurrentCell.RowIndex].Name;
+
         }
 
         private void dgvMain_Click(object sender, EventArgs e)
@@ -98,8 +96,16 @@ namespace PRG282_Project_Group3
             //Consider changing RichTextBox to a listview to display easier
             string studID,name, surname, gender, dob, phone, address;
             int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
+           
+            studentModules = dataHandler.getJoiningTable(studentsList[index].StudentID);
             rtbxSummary.Clear();
-            rtbxSummary.Text = rtbxSummary.Text = $"Student Number:\t{studentsList[index].StudentID}\nStudent Name:\t{studentsList[index].Name}\nStudent Surname:\t{studentsList[index].Surname}\nStudent Cell:\t{studentsList[index].Phone}";
+            string modules="";
+            foreach (var item in studentModules)
+            {
+                modules += "\n"+item.ModuleID.ToString();
+            }
+            pbStudent.Image = studentsList[index].StudentImage;
+            rtbxSummary.Text = rtbxSummary.Text = $"Student Number:\t{studentsList[index].StudentID}\nStudent Name:\t{studentsList[index].Name}\nStudent Surname:\t{studentsList[index].Surname}\nStudent Cell:\t{studentsList[index].Phone}\nModules:\n\t{modules}";
 
         }
 
@@ -110,9 +116,21 @@ namespace PRG282_Project_Group3
             {
                 if (item.StudentID == searchID)
                 {
-                    rtbxSummary.Text = $"Student Number:\t{item.StudentID}\nStudent Name:\t{item.Name}\nStudent Surname:\t{item.Surname}\nStudent Cell:\t{item.Phone}";
+                    studentModules = dataHandler.getJoiningTable(item.StudentID);
+                    string modules = "";
+                    foreach (var module in studentModules)
+                    {
+                        modules += "\n" + module.ModuleID.ToString();
+                    }
+                    rtbxSummary.Text = $"Student Number:\t{item.StudentID}\nStudent Name:\t{item.Name}\nStudent Surname:\t{item.Surname}\nStudent Cell:\t{item.Phone}\nModules:\n\t{modules}";
+                    pbStudent.Image = item.StudentImage;
                 }
             }
+        }
+
+        private void dgvMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

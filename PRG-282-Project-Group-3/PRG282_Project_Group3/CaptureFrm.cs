@@ -19,9 +19,16 @@ namespace PRG282_Project_Group3
 
         int function = 0;
         Image studentImage;
-        public CaptureFrm(int var)
+        public CaptureFrm(int var, Students update)
         {
             InitializeComponent();
+            string StudentId = textBox1.Text;
+            string name = textBox2.Text;
+            string surname = surnameTbox.Text;
+            string phone = textBox3.Text;
+            char gender = 'n';
+            string address = textBox4.Text;
+            string dob = dateTimePicker1.Text;
             function = var;
         }
 

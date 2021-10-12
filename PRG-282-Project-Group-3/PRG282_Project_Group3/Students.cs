@@ -9,7 +9,7 @@ namespace PRG282_Project_Group3
 {
    public class Students
     {
-        List<Modules> moduleList = new List<Modules>();
+
 
         int studentID;
         string name;
@@ -19,6 +19,7 @@ namespace PRG282_Project_Group3
         string dob;
         string phone;
         string studentAddress;
+    
 
         public Students(int studentID, string name, string surname, Image studentImage, char gender, string dob, string phone, string studentAddress)
         {
