@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PRG282_Project_Group3
 {
-   public class Students
+    public class Students
     {
-        List<Modules> moduleList = new List<Modules>();
+        private List<Modules> moduleList = new List<Modules>();
 
-        int studentID;
-        string name;
-        string surname;
-        Image studentImage;
-        char gender;
-        string dob;
-        string phone;
-        string studentAddress;
+        private int studentID;
+        private string name;
+        private string surname;
+        private Image studentImage;
+        private char gender;
+        private string dob;
+        private string phone;
+        private string studentAddress;
 
         public Students(int studentID, string name, string surname, Image studentImage, char gender, string dob, string phone, string studentAddress)
         {

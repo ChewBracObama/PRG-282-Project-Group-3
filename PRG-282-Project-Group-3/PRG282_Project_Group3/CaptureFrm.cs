@@ -2,32 +2,46 @@
 using PRG282_Project_Group3.Data_Access_Layer;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
 {
     public partial class CaptureFrm : Form
     {
-        BusinessLogic businessLogic = new BusinessLogic();
-        Datahandler datahandler = new Datahandler();
+        private BusinessLogic businessLogic = new BusinessLogic();
+        private Datahandler datahandler = new Datahandler();
 
-        int function = 0;
-        Image studentImage;
+        private int function = 0;
+        private Image studentImage;
+
         public CaptureFrm(int var)
         {
             InitializeComponent();
             function = var;
         }
 
+        public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone)
+        {
+            InitializeComponent();
+            tbxStudentNum.Text = StudentID.ToString();
+            tbxName.Text = name;
+            tbxSurname.Text = surname;
+            dtpDOB.Value = DateTime.Parse(dob);
+            if (gender == 'M')
+            {
+                rbtnMale.Checked = true;
+            }
+            else
+            {
+                rbtFemale.Checked = true;
+            }
+            tbxAddress.Text = address;
+            tbxPhone.Text = phone;
+        }
+
         private void label5_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,17 +49,16 @@ namespace PRG282_Project_Group3
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.InitialDirectory = @"C:\Pictures\";
             ofd.ShowDialog();
-           
 
-            if (ofd.FileName != "") 
+            if (ofd.FileName != "")
             {
                 studentImage = Image.FromFile(ofd.FileName);
-                button1.BackColor = Color.Green;
-                button1.Text = "Uploaded";
+                btnImgUpload.BackColor = Color.Green;
+                btnImgUpload.Text = "Uploaded";
             }
             else
             {
-                button1.BackColor = Color.Red;
+                btnImgUpload.BackColor = Color.Red;
             }
         }
 
@@ -54,13 +67,13 @@ namespace PRG282_Project_Group3
             //this.Hide();
             //List<Students> students = new List<Students>();
             // students= datahandler.getStudents();
-            string StudentId = textBox1.Text;
-            string name = textBox2.Text;
-            string surname = surnameTbox.Text;
-            string phone = textBox3.Text;
+            string StudentId = tbxStudentNum.Text;
+            string name = tbxName.Text;
+            string surname = tbxSurname.Text;
+            string phone = tbxPhone.Text;
             char gender = 'n';
-            string address = textBox4.Text;
-            string dob = dateTimePicker1.Text;
+            string address = tbxAddress.Text;
+            string dob = dtpDOB.Text;
             List<string> moduleCodes = new List<string>();
 
             for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
@@ -72,11 +85,11 @@ namespace PRG282_Project_Group3
                 MessageBox.Show(item.ToString());
             }
 
-            if (radioButton1.Checked==true)
+            if (rbtnMale.Checked == true)
             {
                 gender = 'M';
             }
-            else if(radioButton2.Checked==true)
+            else if (rbtFemale.Checked == true)
             {
                 gender = 'F';
             }
@@ -106,17 +119,14 @@ namespace PRG282_Project_Group3
 
         private void CaptureFrm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

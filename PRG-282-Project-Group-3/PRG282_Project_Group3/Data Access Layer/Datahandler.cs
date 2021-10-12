@@ -113,24 +113,22 @@ namespace PRG282_Project_Group3.Data_Access_Layer
         {
             if (connection.State != ConnectionState.Open)
             {
-
-
                 connection.Open();
 
                 string deleteModulequery = $"DELETE FROM StudentsModules WHERE StudentID = {StudentID}";
                 SqlCommand cmd = new SqlCommand(deleteModulequery, connection);
-               
+
                 cmd.ExecuteNonQuery();
 
                 string query = $"DELETE FROM Students WHERE StudentID = {StudentID}";
                 cmd.CommandText = query;
 
-
                 cmd.ExecuteNonQuery();
-;
+                ;
             }
             connection.Close();
         }
+
         public List<Modules> getModules()
         {
             List<Modules> moduleList = new List<Modules>();
@@ -141,13 +139,13 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             {
                 connection.Open();
 
-                SqlCommand cmd = new SqlCommand(query,connection);
+                SqlCommand cmd = new SqlCommand(query, connection);
 
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        moduleList.Add(new Modules(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString())) ;
+                        moduleList.Add(new Modules(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString()));
                     }
                 }
             }

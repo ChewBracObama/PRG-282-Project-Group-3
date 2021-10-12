@@ -2,6 +2,7 @@
 using PRG282_Project_Group3.Data_Access_Layer;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
@@ -56,8 +57,24 @@ namespace PRG282_Project_Group3
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int studID, index;
+            string name, surname, dob, address, phone;
+            char gender;
+            Image img;
+
+            index = dgvMain.CurrentCell.RowIndex;
+
+            studID = studentsList[index].StudentID;
+            name = studentsList[index].Name;
+            surname = studentsList[index].Surname;
+            dob = studentsList[index].Dob;
+            address = studentsList[index].StudentAddress;
+            gender = studentsList[index].Gender;
+            img = studentsList[index].StudentImage;
+            phone = studentsList[index].Phone;
+
             this.Hide();
-            CaptureFrm captureFrm = new CaptureFrm(1);
+            CaptureFrm captureFrm = new CaptureFrm(studID, name, surname, img, dob, gender, address, phone);
             captureFrm.ShowDialog();
             this.Close();
         }
@@ -96,11 +113,10 @@ namespace PRG282_Project_Group3
         private void dgvMain_Click(object sender, EventArgs e)
         {
             //Consider changing RichTextBox to a listview to display easier
-            string studID,name, surname, gender, dob, phone, address;
+            string studID, name, surname, gender, dob, phone, address;
             int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
             rtbxSummary.Clear();
             rtbxSummary.Text = rtbxSummary.Text = $"Student Number:\t{studentsList[index].StudentID}\nStudent Name:\t{studentsList[index].Name}\nStudent Surname:\t{studentsList[index].Surname}\nStudent Cell:\t{studentsList[index].Phone}";
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
