@@ -105,6 +105,18 @@ namespace PRG282_Project_Group3
 
         private void dgvMain_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
+            string studID, name, surname, gender, dob, phone, address;
+            int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
+
+            studentModules = dataHandler.getJoiningTable(studentsList[index].StudentID);
+            rtbxSummary.Clear();
+            string modules = "";
+            foreach (var item in studentModules)
+            {
+                modules += "\n" + item.ModuleID.ToString();
+            }
+            pbStudent.Image = studentsList[index].StudentImage;
+            rtbxSummary.Text = rtbxSummary.Text = $"Student Number:\t{studentsList[index].StudentID}\nStudent Name:\t{studentsList[index].Name}\nStudent Surname:\t{studentsList[index].Surname}\nStudent Cell:\t{studentsList[index].Phone}\nModules:\n\t{modules}";
 
         }
 
