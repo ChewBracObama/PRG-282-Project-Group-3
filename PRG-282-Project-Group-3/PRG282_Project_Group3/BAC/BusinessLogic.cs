@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace PRG282_Project_Group3.BAC
 {
     internal class BusinessLogic
     {
+        private Datahandler datahandler = new Datahandler();
+
         public static bool checkDetails(string[] detailsArray, string username, string password)
         {
             bool result = false;
@@ -32,20 +35,21 @@ namespace PRG282_Project_Group3.BAC
                 {
                     if ((regexNum.IsMatch(phone) == true) && (phone.Length == 10) && phone != null)
                     {
-                        if (studentImg!=null && gender!='n' && address !="" && moduleCodes.Count>0)
+                        if (studentImg != null && gender != 'n' && address != "" && moduleCodes.Count > 0)
                         {
                             if (function == 0)
                             {
-                                Datahandler datahandler = new Datahandler();
+                                //Datahandler datahandler = new Datahandler();
                                 datahandler.insertStudent(StudentId, name, surname, studentImg, gender, dob, phone, address);
                                 foreach (var item in moduleCodes)
                                 {
                                     datahandler.insertModule(StudentId, item);
                                 }
                                 return true;
-                            }else
+                            }
+                            else
                             {
-                                Datahandler datahandler = new Datahandler();
+                                //Datahandler datahandler = new Datahandler();
                                 datahandler.updateStudents(StudentId, name, surname, studentImg, gender, dob, phone, address, moduleCodes);
                                 return true;
                             }
@@ -73,9 +77,35 @@ namespace PRG282_Project_Group3.BAC
 
         public void DeleteUser(int StudentID)
         {
-            //string query = $"DELETE * FROM Students WHERE StudentID = {StudentID}";
-
-
+            try
+            {
+                datahandler.deleteStudent(StudentID);
+                MessageBox.Show("Success");
+            }
+            catch (System.Exception)
+            {
+                throw new SQLOperationFailedException("Error occured whilst attempting to delete");
+            }
         }
     }
+}
+
+[System.Serializable]
+public class SQLOperationFailedException : System.Exception
+{
+    public SQLOperationFailedException()
+    {
+    }
+
+    public SQLOperationFailedException(string message) : base(message)
+    {
+    }
+
+    public SQLOperationFailedException(string message, System.Exception inner) : base(message, inner)
+    {
+    }
+
+    protected SQLOperationFailedException(
+      System.Runtime.Serialization.SerializationInfo info,
+      System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
 }

@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PRG282_Project_Group3.BAC;
+﻿using PRG282_Project_Group3.BAC;
 using PRG282_Project_Group3.Data_Access_Layer;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
 {
     public partial class mainFrm : Form
     {
-        Datahandler dataHandler = new Datahandler();
+        private Datahandler dataHandler = new Datahandler();
 
+        private string[] modules = { "PRG281", "DBD281", "MAT282", "WPR181", "STA281", "LPR282", "MAT281" };
+        private List<Students> studentsList = new List<Students>();
+        private BindingSource bs = new BindingSource();
+        private BusinessLogic businessLogic = new BusinessLogic();
+        private Datahandler datahandler = new Datahandler();
 
-        string[] modules = { "PRG281","DBD281","MAT282","WPR181","STA281","LPR282","MAT281"};
-        List<Students> studentsList = new List<Students>();
-        BindingSource bs = new BindingSource();
-        Datahandler datahandler = new Datahandler();
         //public mainFrm(List<Students> students)
         //{
         //    studentsList = students;                               // testing list pass from capture
@@ -32,10 +27,9 @@ namespace PRG282_Project_Group3
         public mainFrm()
         {
             InitializeComponent();
-            studentsList=datahandler.getStudents();
+            studentsList = datahandler.getStudents();
             bs.DataSource = studentsList;
             dgvMain.DataSource = bs;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,7 +42,6 @@ namespace PRG282_Project_Group3
 
         private void btnUploadImg_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -74,15 +67,20 @@ namespace PRG282_Project_Group3
 
         private void pbStudent_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int index = dgvMain.CurrentCell.RowIndex;
-            int studentID = int.Parse(dgvMain[0,index].ToString());
+            int studentID = int.Parse(studentsList[index].StudentID.ToString());
+            MessageBox.Show(studentID.ToString());
 
-            
+            businessLogic.DeleteUser(studentID);
+            studentsList.Clear();
+            studentsList = dataHandler.getStudents();
+            bs.DataSource = studentsList;
+            dgvMain.DataSource = bs;
+            dgvMain.Refresh();
         }
 
         private void dgvMain_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -90,7 +88,16 @@ namespace PRG282_Project_Group3
             string name, surname, gender, dob, phone, address;
             string[] modules;
             pbStudent.Image = studentsList[dgvMain.CurrentCell.RowIndex].StudentImage;
-            richTextBox1.Text = studentsList[dgvMain.CurrentCell.RowIndex].Name;
+            rtbxSummary.Text = studentsList[dgvMain.CurrentCell.RowIndex].Name;
+        }
+
+        private void dgvMain_Click(object sender, EventArgs e)
+        {
+            //Consider changing RichTextBox to a listview to display easier
+            string studID,name, surname, gender, dob, phone, address;
+
+            rtbxSummary.Clear();
+            rtbxSummary.Text = studentsList[dgvMain.CurrentCell.RowIndex].StudentID.ToString();
         }
     }
 }

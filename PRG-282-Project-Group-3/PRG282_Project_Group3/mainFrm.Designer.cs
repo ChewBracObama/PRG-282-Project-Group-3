@@ -35,7 +35,7 @@ namespace PRG282_Project_Group3
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbxSummary = new System.Windows.Forms.RichTextBox();
             this.lblRichBox = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
@@ -58,6 +58,7 @@ namespace PRG282_Project_Group3
             this.dgvMain.Size = new System.Drawing.Size(509, 211);
             this.dgvMain.TabIndex = 0;
             this.dgvMain.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellEnter);
+            this.dgvMain.Click += new System.EventHandler(this.dgvMain_Click);
             // 
             // btnAdd
             // 
@@ -109,13 +110,13 @@ namespace PRG282_Project_Group3
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // richTextBox1
+            // rtbxSummary
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(181, 37);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(295, 154);
-            this.richTextBox1.TabIndex = 24;
-            this.richTextBox1.Text = "";
+            this.rtbxSummary.Location = new System.Drawing.Point(181, 37);
+            this.rtbxSummary.Name = "rtbxSummary";
+            this.rtbxSummary.Size = new System.Drawing.Size(295, 154);
+            this.rtbxSummary.TabIndex = 24;
+            this.rtbxSummary.Text = "";
             // 
             // lblRichBox
             // 
@@ -211,7 +212,7 @@ namespace PRG282_Project_Group3
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.lblRichBox);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbxSummary);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnLogOut);
@@ -236,7 +237,7 @@ namespace PRG282_Project_Group3
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbxSummary;
         private System.Windows.Forms.Label lblRichBox;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox tbSearch;
