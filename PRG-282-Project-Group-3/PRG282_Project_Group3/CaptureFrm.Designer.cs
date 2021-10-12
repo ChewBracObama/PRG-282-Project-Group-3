@@ -38,14 +38,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -60,6 +52,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.surnameTbox = new System.Windows.Forms.TextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -148,105 +141,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(51, 370);
+            this.groupBox1.Controls.Add(this.checkedListBox1);
+            this.groupBox1.Location = new System.Drawing.Point(51, 353);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(411, 164);
+            this.groupBox1.Size = new System.Drawing.Size(411, 196);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Module:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PRG282",
-            "DBD282",
-            "INF282",
-            "LPR282",
-            "SAD282",
-            "MAT282",
-            "STA282",
-            "PMM282",
-            "WPR282"});
-            this.comboBox1.Location = new System.Drawing.Point(173, 21);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(173, 124);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 7;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(173, 91);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 6;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(173, 60);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 129);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 17);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Module Link:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 96);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 17);
-            this.label10.TabIndex = 2;
-            this.label10.Text = " Module Description:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 68);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 17);
-            this.label9.TabIndex = 1;
-            this.label9.Text = " Module Name:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Module Code:";
             // 
             // button1
             // 
@@ -393,6 +296,25 @@
             this.surnameTbox.Size = new System.Drawing.Size(200, 22);
             this.surnameTbox.TabIndex = 21;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "PRG282",
+            "DBD282",
+            "INF282",
+            "LPR282",
+            "SAD282",
+            "MAT282",
+            "STA282",
+            "PMM282",
+            "WPR282"});
+            this.checkedListBox1.Location = new System.Drawing.Point(16, 29);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(310, 140);
+            this.checkedListBox1.TabIndex = 9;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
             // CaptureFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -426,7 +348,6 @@
             this.Text = "Capture";
             this.Load += new System.EventHandler(this.CaptureFrm_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -448,14 +369,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -470,5 +383,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox surnameTbox;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

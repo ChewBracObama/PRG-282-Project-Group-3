@@ -57,6 +57,7 @@ namespace PRG282_Project_Group3
             this.dgvMain.RowHeadersWidth = 51;
             this.dgvMain.Size = new System.Drawing.Size(509, 211);
             this.dgvMain.TabIndex = 0;
+            this.dgvMain.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellEnter);
             // 
             // btnAdd
             // 

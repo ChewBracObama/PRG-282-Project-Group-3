@@ -19,6 +19,8 @@ namespace PRG282_Project_Group3
 
         string[] modules = { "PRG281","DBD281","MAT282","WPR181","STA281","LPR282","MAT281"};
         List<Students> studentsList = new List<Students>();
+        BindingSource bs = new BindingSource();
+        Datahandler datahandler = new Datahandler();
         //public mainFrm(List<Students> students)
         //{
         //    studentsList = students;                               // testing list pass from capture
@@ -30,12 +32,16 @@ namespace PRG282_Project_Group3
         public mainFrm()
         {
             InitializeComponent();
+            studentsList=datahandler.getStudents();
+            bs.DataSource = studentsList;
+            dgvMain.DataSource = bs;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CaptureFrm captureFrm = new CaptureFrm();
+            CaptureFrm captureFrm = new CaptureFrm(0);
             captureFrm.ShowDialog();
             this.Close();
         }
@@ -56,7 +62,7 @@ namespace PRG282_Project_Group3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CaptureFrm captureFrm = new CaptureFrm();
+            CaptureFrm captureFrm = new CaptureFrm(1);
             captureFrm.ShowDialog();
             this.Close();
         }
@@ -77,6 +83,14 @@ namespace PRG282_Project_Group3
             int studentID = int.Parse(dgvMain[0,index].ToString());
 
             
+        }
+
+        private void dgvMain_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string name, surname, gender, dob, phone, address;
+            string[] modules;
+            pbStudent.Image = studentsList[dgvMain.CurrentCell.RowIndex].StudentImage;
+            richTextBox1.Text = studentsList[dgvMain.CurrentCell.RowIndex].Name;
         }
     }
 }
