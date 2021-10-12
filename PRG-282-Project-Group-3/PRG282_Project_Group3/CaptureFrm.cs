@@ -40,12 +40,12 @@ namespace PRG282_Project_Group3
             if (ofd.FileName != "") 
             {
                 studentImage = Image.FromFile(ofd.FileName);
-                button1.BackColor = Color.Green;
-                button1.Text = "Uploaded";
+                btnImg.BackColor = Color.Green;
+                btnImg.Text = "Uploaded";
             }
             else
             {
-                button1.BackColor = Color.Red;
+                btnImg.BackColor = Color.Red;
             }
         }
 
@@ -54,13 +54,13 @@ namespace PRG282_Project_Group3
             //this.Hide();
             //List<Students> students = new List<Students>();
             // students= datahandler.getStudents();
-            string StudentId = textBox1.Text;
-            string name = textBox2.Text;
-            string surname = surnameTbox.Text;
-            string phone = textBox3.Text;
+            string StudentId = tbxStudentNum.Text;
+            string name = tbxName.Text;
+            string surname = tbxSurname.Text;
+            string phone = tbxPhone.Text;
             char gender = 'n';
-            string address = textBox4.Text;
-            string dob = dateTimePicker1.Text;
+            string address = tbxAddress.Text;
+            string dob = dtpDOB.Text;
             List<string> moduleCodes = new List<string>();
 
             for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
@@ -72,11 +72,11 @@ namespace PRG282_Project_Group3
                 MessageBox.Show(item.ToString());
             }
 
-            if (radioButton1.Checked==true)
+            if (rbtnMale.Checked==true)
             {
                 gender = 'M';
             }
-            else if(radioButton2.Checked==true)
+            else if(rbtnFemale.Checked==true)
             {
                 gender = 'F';
             }
