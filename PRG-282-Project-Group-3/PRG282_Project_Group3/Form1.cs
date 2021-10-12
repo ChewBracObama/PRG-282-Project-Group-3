@@ -28,7 +28,6 @@ namespace PRG282_Project_Group3
             }
 
             if (isUser)
-            if (isUser)
             {
                 this.Hide();
                 mainFrm mainFrm = new mainFrm();
@@ -47,21 +46,6 @@ namespace PRG282_Project_Group3
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
             this.Close();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLogin_MouseHover(object sender, EventArgs e)
-        {
-   
         }
     }
 }
