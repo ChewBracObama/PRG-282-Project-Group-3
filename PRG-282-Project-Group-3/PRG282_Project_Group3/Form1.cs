@@ -47,5 +47,10 @@ namespace PRG282_Project_Group3
             registerForm.ShowDialog();
             this.Close();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

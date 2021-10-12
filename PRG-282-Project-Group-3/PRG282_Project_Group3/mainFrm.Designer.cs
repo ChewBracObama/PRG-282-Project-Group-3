@@ -93,10 +93,10 @@ namespace PRG282_Project_Group3
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnLogOut.Location = new System.Drawing.Point(16, 556);
+            this.btnLogOut.Location = new System.Drawing.Point(16, 550);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(100, 28);
+            this.btnLogOut.Size = new System.Drawing.Size(100, 35);
             this.btnLogOut.TabIndex = 21;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -146,6 +146,7 @@ namespace PRG282_Project_Group3
             // 
             this.lblRichBox.AutoSize = true;
             this.lblRichBox.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.lblRichBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.lblRichBox.Location = new System.Drawing.Point(238, 25);
             this.lblRichBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRichBox.Name = "lblRichBox";
@@ -157,6 +158,7 @@ namespace PRG282_Project_Group3
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.lblSearch.Location = new System.Drawing.Point(12, 26);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
@@ -247,6 +249,7 @@ namespace PRG282_Project_Group3
             // 
             this.lblImage.AutoSize = true;
             this.lblImage.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.lblImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
             this.lblImage.Location = new System.Drawing.Point(639, 26);
             this.lblImage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImage.Name = "lblImage";
