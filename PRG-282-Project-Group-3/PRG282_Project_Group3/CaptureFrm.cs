@@ -18,19 +18,13 @@ namespace PRG282_Project_Group3
         public CaptureFrm(int var)
         {
             InitializeComponent();
-            string StudentId = textBox1.Text;
-            string name = textBox2.Text;
-            string surname = surnameTbox.Text;
-            string phone = textBox3.Text;
-            char gender = 'n';
-            string address = textBox4.Text;
-            string dob = dateTimePicker1.Text;
             function = var;
         }
 
-        public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone)
+        public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone, int function)
         {
             InitializeComponent();
+            this.function = function;
             tbxStudentNum.Text = StudentID.ToString();
             tbxName.Text = name;
             tbxSurname.Text = surname;
