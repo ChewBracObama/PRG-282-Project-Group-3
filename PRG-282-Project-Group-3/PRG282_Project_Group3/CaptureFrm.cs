@@ -19,7 +19,7 @@ namespace PRG282_Project_Group3
 
         int function = 0;
         Image studentImage;
-        public CaptureFrm(int var, Students update)
+        public CaptureFrm(int var)
         {
             InitializeComponent();
             string StudentId = textBox1.Text;
