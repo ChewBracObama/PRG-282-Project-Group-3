@@ -39,18 +39,18 @@
             this.tbxName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.btnImgUpload = new System.Windows.Forms.Button();
+            this.btnImg = new System.Windows.Forms.Button();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbtFemale = new System.Windows.Forms.RadioButton();
+            this.rbtnFemale = new System.Windows.Forms.RadioButton();
             this.rbtnMale = new System.Windows.Forms.RadioButton();
             this.tbxPhone = new System.Windows.Forms.TextBox();
             this.tbxAddress = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.tbxSurname = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -132,18 +132,18 @@
             // 
             // tbxStudentNum
             // 
-            this.tbxStudentNum.Location = new System.Drawing.Point(196, 42);
-            this.tbxStudentNum.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxStudentNum.Location = new System.Drawing.Point(261, 52);
+            this.tbxStudentNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxStudentNum.Name = "tbxStudentNum";
-            this.tbxStudentNum.Size = new System.Drawing.Size(151, 20);
+            this.tbxStudentNum.Size = new System.Drawing.Size(200, 22);
             this.tbxStudentNum.TabIndex = 8;
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(196, 76);
-            this.tbxName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxName.Location = new System.Drawing.Point(261, 94);
+            this.tbxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(151, 20);
+            this.tbxName.Size = new System.Drawing.Size(200, 22);
             this.tbxName.TabIndex = 9;
             // 
             // groupBox1
@@ -178,33 +178,40 @@
             this.checkedListBox1.TabIndex = 9;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
-            // btnImgUpload
+            // btnImg
             // 
-            this.btnImgUpload.Location = new System.Drawing.Point(196, 127);
-            this.btnImgUpload.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImgUpload.Name = "btnImgUpload";
-            this.btnImgUpload.Size = new System.Drawing.Size(75, 28);
-            this.btnImgUpload.TabIndex = 11;
-            this.btnImgUpload.Text = "Upload";
-            this.btnImgUpload.UseVisualStyleBackColor = true;
-            this.btnImgUpload.Click += new System.EventHandler(this.button1_Click);
+            this.btnImg.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImg.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.btnImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnImg.Location = new System.Drawing.Point(261, 156);
+            this.btnImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnImg.Name = "btnImg";
+            this.btnImg.Size = new System.Drawing.Size(100, 34);
+            this.btnImg.TabIndex = 11;
+            this.btnImg.Text = "Upload";
+            this.btnImg.UseVisualStyleBackColor = true;
+            this.btnImg.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(196, 159);
-            this.dtpDOB.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDOB.Location = new System.Drawing.Point(261, 196);
+            this.dtpDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDOB.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dtpDOB.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(151, 20);
+            this.dtpDOB.Size = new System.Drawing.Size(200, 22);
             this.dtpDOB.TabIndex = 12;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rbtFemale);
+            this.groupBox2.Controls.Add(this.rbtnFemale);
             this.groupBox2.Controls.Add(this.rbtnMale);
-            this.groupBox2.Location = new System.Drawing.Point(196, 189);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.groupBox2.Location = new System.Drawing.Point(261, 233);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(150, 41);
@@ -212,25 +219,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gender";
             // 
-            // rbtFemale
+            // rbtnFemale
             // 
-            this.rbtFemale.AutoSize = true;
-            this.rbtFemale.Location = new System.Drawing.Point(65, 15);
-            this.rbtFemale.Margin = new System.Windows.Forms.Padding(2);
-            this.rbtFemale.Name = "rbtFemale";
-            this.rbtFemale.Size = new System.Drawing.Size(59, 17);
-            this.rbtFemale.TabIndex = 1;
-            this.rbtFemale.TabStop = true;
-            this.rbtFemale.Text = "Female";
-            this.rbtFemale.UseVisualStyleBackColor = true;
+            this.rbtnFemale.AutoSize = true;
+            this.rbtnFemale.Location = new System.Drawing.Point(87, 18);
+            this.rbtnFemale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbtnFemale.Name = "rbtnFemale";
+            this.rbtnFemale.Size = new System.Drawing.Size(81, 23);
+            this.rbtnFemale.TabIndex = 1;
+            this.rbtnFemale.TabStop = true;
+            this.rbtnFemale.Text = "Female";
+            this.rbtnFemale.UseVisualStyleBackColor = true;
             // 
             // rbtnMale
             // 
             this.rbtnMale.AutoSize = true;
-            this.rbtnMale.Location = new System.Drawing.Point(2, 15);
-            this.rbtnMale.Margin = new System.Windows.Forms.Padding(2);
+            this.rbtnMale.Location = new System.Drawing.Point(3, 18);
+            this.rbtnMale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtnMale.Name = "rbtnMale";
-            this.rbtnMale.Size = new System.Drawing.Size(48, 17);
+            this.rbtnMale.Size = new System.Drawing.Size(65, 23);
             this.rbtnMale.TabIndex = 0;
             this.rbtnMale.TabStop = true;
             this.rbtnMale.Text = "Male";
@@ -238,18 +245,18 @@
             // 
             // tbxPhone
             // 
-            this.tbxPhone.Location = new System.Drawing.Point(196, 240);
-            this.tbxPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxPhone.Location = new System.Drawing.Point(261, 295);
+            this.tbxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxPhone.Name = "tbxPhone";
-            this.tbxPhone.Size = new System.Drawing.Size(151, 20);
+            this.tbxPhone.Size = new System.Drawing.Size(200, 22);
             this.tbxPhone.TabIndex = 14;
             // 
             // tbxAddress
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(196, 266);
-            this.tbxAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxAddress.Location = new System.Drawing.Point(261, 327);
+            this.tbxAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.Size = new System.Drawing.Size(151, 20);
+            this.tbxAddress.Size = new System.Drawing.Size(200, 22);
             this.tbxAddress.TabIndex = 0;
             // 
             // label12
@@ -285,27 +292,37 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // btnSubmit
             // 
-            this.button2.Location = new System.Drawing.Point(38, 440);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnSubmit.Location = new System.Drawing.Point(51, 542);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 36);
+            this.btnSubmit.TabIndex = 18;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnBack
             // 
-            this.button3.Location = new System.Drawing.Point(113, 440);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 19);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnBack.Location = new System.Drawing.Point(151, 542);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 36);
+            this.btnBack.TabIndex = 19;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.button3_Click);
             // 
             // label13
             // 
@@ -319,22 +336,22 @@
             // 
             // tbxSurname
             // 
-            this.tbxSurname.Location = new System.Drawing.Point(196, 101);
-            this.tbxSurname.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxSurname.Location = new System.Drawing.Point(261, 124);
+            this.tbxSurname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSurname.Name = "tbxSurname";
-            this.tbxSurname.Size = new System.Drawing.Size(151, 20);
+            this.tbxSurname.Size = new System.Drawing.Size(200, 22);
             this.tbxSurname.TabIndex = 21;
             // 
             // CaptureFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(600, 469);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.ClientSize = new System.Drawing.Size(800, 589);
             this.Controls.Add(this.tbxSurname);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label12);
@@ -342,7 +359,7 @@
             this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dtpDOB);
-            this.Controls.Add(this.btnImgUpload);
+            this.Controls.Add(this.btnImg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.tbxStudentNum);
@@ -379,18 +396,18 @@
         private System.Windows.Forms.TextBox tbxStudentNum;
         private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnImgUpload;
+        private System.Windows.Forms.Button btnImg;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbtFemale;
+        private System.Windows.Forms.RadioButton rbtnFemale;
         private System.Windows.Forms.RadioButton rbtnMale;
         private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbxSurname;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
