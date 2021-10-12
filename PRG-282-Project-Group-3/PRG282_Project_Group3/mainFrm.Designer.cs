@@ -67,10 +67,10 @@ namespace PRG282_Project_Group3
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnAdd.Location = new System.Drawing.Point(20, 443);
+            this.btnAdd.Location = new System.Drawing.Point(20, 441);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(121, 28);
+            this.btnAdd.Size = new System.Drawing.Size(121, 37);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add New User";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@ namespace PRG282_Project_Group3
             this.btnUpdate.Location = new System.Drawing.Point(20, 375);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(121, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(121, 37);
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -124,10 +124,10 @@ namespace PRG282_Project_Group3
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnDelete.Location = new System.Drawing.Point(20, 311);
+            this.btnDelete.Location = new System.Drawing.Point(20, 312);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(121, 28);
+            this.btnDelete.Size = new System.Drawing.Size(121, 39);
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete User";
             this.btnDelete.UseVisualStyleBackColor = true;
