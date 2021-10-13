@@ -147,5 +147,24 @@ namespace PRG282_Project_Group3
         {
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            int searchID = int.Parse(tbSearch.Text);
+            foreach (var item in studentsList)
+            {
+                if (item.StudentID == searchID)
+                {
+                    studentModules = dataHandler.getJoiningTable(item.StudentID);
+                    string modules = "";
+                    foreach (var module in studentModules)
+                    {
+                        modules += "\n" + module.ModuleID.ToString();
+                    }
+                    rtbxSummary.Text = $"Student Number:\t{item.StudentID}\nStudent Name:\t{item.Name}\nStudent Surname:\t{item.Surname}\nStudent Cell:\t{item.Phone}\nModules:\n\t{modules}";
+                    pbStudent.Image = item.StudentImage;
+                }
+            }
+        }
     }
 }
