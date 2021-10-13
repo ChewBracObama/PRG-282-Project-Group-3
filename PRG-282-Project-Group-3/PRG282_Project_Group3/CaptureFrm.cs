@@ -34,6 +34,7 @@ namespace PRG282_Project_Group3
             tbxName.Text = name;
             tbxSurname.Text = surname;
             dtpDOB.Value = DateTime.Parse(dob);
+        
             if (gender == 'M')
             {
                 rbtnMale.Checked = true;

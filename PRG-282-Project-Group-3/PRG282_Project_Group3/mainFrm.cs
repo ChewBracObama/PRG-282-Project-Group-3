@@ -11,6 +11,7 @@ namespace PRG282_Project_Group3
     {
         private Datahandler dataHandler = new Datahandler();
         private int displayValue = 0;
+      
         private List<Students> studentsList = new List<Students>();
         private List<JoiningTable> studentModules = new List<JoiningTable>();
         private List<Modules> moduleList = new List<Modules>();
@@ -112,6 +113,8 @@ namespace PRG282_Project_Group3
             else if (displayValue == 1)
             {
                 int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
+
+           
                 rtbxSummary.Clear();
 
                 rtbxSummary.Text = $"Module Code:\t{moduleList[index].Code}\nModule Name:\t{moduleList[index].Name}\nModule Link:\t{moduleList[index].Link}\nModule Description:\t{moduleList[index].Description}";

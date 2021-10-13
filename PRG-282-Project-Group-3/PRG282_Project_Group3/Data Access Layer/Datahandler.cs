@@ -22,7 +22,6 @@ namespace PRG282_Project_Group3.Data_Access_Layer
         public void insertStudent(string StudentId, string name, string surname, Image studentImg, char gender, string dob, string phone, string address)
         {
             connection.Open();
-            //below values should be subbed with actual var after validation
             string qryimgUpload = string.Format("INSERT INTO Students(StudentID,Name,Surname,StudentImage,Gender,DOB,Phone,StudentAddress) VALUES({0},'{1}','{2}',@P_Image,'{3}','{4}','{5}','{6}')", StudentId, name, surname, gender, dob, phone, address);
             SqlCommand command = new SqlCommand(qryimgUpload, connection);
 

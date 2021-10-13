@@ -21,14 +21,14 @@ namespace PRG282_Project_Group3.BAC
                     result = true;
                 }
             }
-
             return result;
         }
+
 
         public bool checkCapture(string StudentId, string name, string surname, Image studentImg, char gender, string dob, string phone, string address, List<string> moduleCodes, int function)
         {
             Regex regexNum = new Regex("^[0-9]+$");
-            Regex regexWords = new Regex(@"^[a-zA-Z]+$");
+            Regex regexWords = new Regex(@"^[a-zA-Z ]+$");
             if (regexNum.IsMatch(StudentId) == true)
             {
                 if ((regexWords.IsMatch(name) == true && name != null) && (regexWords.IsMatch(surname) == true && surname != null))
