@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRG282_Project_Group3
 {
-    class JoiningTable
+    public class JoiningTable
     {
         int studentsModulesID;
         int studentID;

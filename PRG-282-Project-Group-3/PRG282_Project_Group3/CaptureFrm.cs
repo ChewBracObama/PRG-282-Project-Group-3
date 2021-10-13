@@ -13,6 +13,7 @@ namespace PRG282_Project_Group3
         private Datahandler datahandler = new Datahandler();
 
         private int function = 0;
+        
         private Image studentImage;
 
         public CaptureFrm(int var)
@@ -21,7 +22,7 @@ namespace PRG282_Project_Group3
             function = var;
         }
 
-        public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone, int function)
+        public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone, int function, List<JoiningTable> moduleList)
         {
             InitializeComponent();
             this.function = function;
@@ -39,6 +40,21 @@ namespace PRG282_Project_Group3
             }
             tbxAddress.Text = address;
             tbxPhone.Text = phone;
+ 
+            foreach (JoiningTable element in moduleList)
+            {   
+                for (int x = 0; x < checkedListBox1.Items.Count; x++)
+                {
+                    if (checkedListBox1.Items[x].ToString() == element.ModuleID.ToString())
+                    {
+                        checkedListBox1.SetItemChecked(x, true);
+                    }
+                }
+            }
+
+            studentImage = img;
+            btnImgUpload.BackColor = Color.Green;
+            btnImgUpload.Text = "Uploaded";
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -65,9 +81,6 @@ namespace PRG282_Project_Group3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //List<Students> students = new List<Students>();
-            // students= datahandler.getStudents();
             string StudentId = tbxStudentNum.Text;
             string name = tbxName.Text;
             string surname = tbxSurname.Text;
@@ -80,10 +93,6 @@ namespace PRG282_Project_Group3
             for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
             {
                 moduleCodes.Add(checkedListBox1.CheckedItems[i].ToString());
-            }
-            foreach (var item in moduleCodes)
-            {
-                MessageBox.Show(item.ToString());
             }
 
             if (rbtnMale.Checked == true)
@@ -103,6 +112,7 @@ namespace PRG282_Project_Group3
                 if (function == 1)
                     MessageBox.Show("User updated successfully");
 
+                this.Hide();
                 mainFrm main = new mainFrm();
                 main.ShowDialog();
                 this.Close();

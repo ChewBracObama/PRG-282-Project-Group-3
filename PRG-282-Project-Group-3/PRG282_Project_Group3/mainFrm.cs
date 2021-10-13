@@ -75,7 +75,7 @@ namespace PRG282_Project_Group3
             phone = studentsList[index].Phone;
 
             this.Hide();
-            CaptureFrm captureFrm = new CaptureFrm(studID, name, surname, img, dob, gender, address, phone, 1);
+            CaptureFrm captureFrm = new CaptureFrm(studID, name, surname, img, dob, gender, address, phone,1,studentModules); 
             captureFrm.ShowDialog();
             this.Close();
         }
