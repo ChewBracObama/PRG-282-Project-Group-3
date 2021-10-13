@@ -25,6 +25,10 @@ namespace PRG282_Project_Group3
         public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone, int function, List<JoiningTable> moduleList)
         {
             InitializeComponent();
+            if (function == 1)
+                tbxStudentNum.Enabled = false;
+            else tbxStudentNum.Enabled = true;
+            
             this.function = function;
             tbxStudentNum.Text = StudentID.ToString();
             tbxName.Text = name;
