@@ -13,6 +13,7 @@ namespace PRG282_Project_Group3
         private Datahandler datahandler = new Datahandler();
 
         private int function = 0;
+        
         private Image studentImage;
 
         public CaptureFrm(int var)
@@ -21,7 +22,7 @@ namespace PRG282_Project_Group3
             function = var;
         }
 
-        public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone, int function)
+        public CaptureFrm(int StudentID, string name, string surname, Image img, string dob, char gender, string address, string phone, int function, List<JoiningTable> moduleList)
         {
             InitializeComponent();
             this.function = function;
@@ -39,6 +40,17 @@ namespace PRG282_Project_Group3
             }
             tbxAddress.Text = address;
             tbxPhone.Text = phone;
+ 
+            foreach (JoiningTable element in moduleList)
+            {   
+                for (int x = 0; x < checkedListBox1.Items.Count; x++)
+                {
+                    if (checkedListBox1.Items[x].ToString() == element.ModuleID.ToString())
+                    {
+                        checkedListBox1.SetItemChecked(x, true);
+                    }
+                }
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)

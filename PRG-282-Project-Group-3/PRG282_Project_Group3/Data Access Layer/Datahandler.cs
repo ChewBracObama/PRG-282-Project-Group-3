@@ -4,19 +4,21 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PRG282_Project_Group3.Data_Access_Layer
 {
     internal class Datahandler
     {
         private SqlConnection connection;
+        public List<JoiningTable> modules = new List<JoiningTable>();
 
         public Datahandler()
         {
             //Aiden// string connectionString = @"Data Source=DESKTOP-T23DGMJ\SQLEXPRESS;Initial Catalog=PRG282_Project1;Integrated Security=True";
             //Martin // string connectionString = @"Data Source=DESKTOP-DMOGBGT\MSSQLSERVERBLG;Initial Catalog=PRG282_Project1;Integrated Security=True";
             //Bhamm // string connectionString = @"Data Source=HADES;Initial Catalog=PRG282_Project1;Integrated Security=True";
-            string connectionString = @"Data Source=DESKTOP-T23DGMJ\SQLEXPRESS;Initial Catalog=PRG282_Project1;Integrated Security=True";
+            string connectionString = @"Data Source=HADES;Initial Catalog=PRG282_Project1;Integrated Security=True";
             this.connection = new SqlConnection(connectionString);
         }
 
@@ -171,29 +173,6 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             }
             connection.Close();
         }
-        //public List<Modules> getModules()
-        //{
-        //    List<Modules> moduleList = new List<Modules>();
-
-        //    string query = "SELECT * FROM Modules";
-
-        //    if (connection.State != ConnectionState.Open)
-        //    {
-        //        connection.Open();
-
-        //        SqlCommand cmd = new SqlCommand(query,connection);
-
-        //        using (var reader = cmd.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                moduleList.Add(new Modules(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString())) ;
-        //            }
-        //        }
-        //    }
-
-        //    return moduleList;
-        //}
     }
 }
 

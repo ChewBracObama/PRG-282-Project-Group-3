@@ -75,7 +75,7 @@ namespace PRG282_Project_Group3
             phone = studentsList[index].Phone;
 
             this.Hide();
-            CaptureFrm captureFrm = new CaptureFrm(studID, name, surname, img, dob, gender, address, phone,1);
+            CaptureFrm captureFrm = new CaptureFrm(studID, name, surname, img, dob, gender, address, phone,1,studentModules); 
             captureFrm.ShowDialog();
             this.Close();
         }
@@ -143,10 +143,6 @@ namespace PRG282_Project_Group3
             }
         }
 
-        private void dgvMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
@@ -186,5 +182,6 @@ namespace PRG282_Project_Group3
         {
             bs.MoveLast();
         }
+
     }
 }
