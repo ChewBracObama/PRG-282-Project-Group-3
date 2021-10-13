@@ -32,42 +32,53 @@ namespace PRG282_Project_Group3
 
             do
             {
-                if (File.Exists(file) == true)
+                if (pass.Contains(";") == true || username.Contains(";") == true)
                 {
-                    if ((passlength >= 8) && (pass == passRepeat))
-                    {
-                        accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
-
-                        createForm1();
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid details entered. Please try again");
-                        tbxUsername.Clear();
-                        tbxPass.Clear();
-                        tbxPassRepeat.Clear();
-                        break;
-                    }
+                    MessageBox.Show("No semi-colons (;) allowed");
+                    tbxUsername.Clear();
+                    tbxPass.Clear();
+                    tbxPassRepeat.Clear();
+                    break;
                 }
                 else
                 {
-                    if ((passlength >= 8) && (pass == passRepeat))
+                    if (File.Exists(file) == true)
                     {
-                        File.Create(file);
+                        if ((passlength >= 8) && (pass == passRepeat))
+                        {
+                            accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
 
-                        accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
-
-                        createForm1();
-                        break;
+                            createForm1();
+                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid details entered. Please try again");
+                            tbxUsername.Clear();
+                            tbxPass.Clear();
+                            tbxPassRepeat.Clear();
+                            break;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Invalid details entered. Please try again");
-                        tbxUsername.Clear();
-                        tbxPass.Clear();
-                        tbxPassRepeat.Clear();
-                        break;
+                        if ((passlength >= 8) && (pass == passRepeat))
+                        {
+                            File.Create(file);
+
+                            accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
+
+                            createForm1();
+                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid details entered. Please try again");
+                            tbxUsername.Clear();
+                            tbxPass.Clear();
+                            tbxPassRepeat.Clear();
+                            break;
+                        }
                     }
                 }
             } while (accountCreated == false);
