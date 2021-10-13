@@ -19,14 +19,6 @@ namespace PRG282_Project_Group3
         private BusinessLogic businessLogic = new BusinessLogic();
         private Datahandler datahandler = new Datahandler();
 
-        //public mainFrm(List<Students> students)
-        //{
-        //    studentsList = students;                               // testing list pass from capture
-        //    Image image = studentsList[0].StudentImage;
-        //    pbStudent.Bit = image;
-        //    MessageBox.Show(image.ToString());
-        //    InitializeComponent();
-        //}
         public mainFrm()
         {
             InitializeComponent();
@@ -93,7 +85,6 @@ namespace PRG282_Project_Group3
         {
             int index = dgvMain.CurrentCell.RowIndex;
             int studentID = int.Parse(studentsList[index].StudentID.ToString());
-            MessageBox.Show(studentID.ToString());
 
             businessLogic.DeleteUser(studentID);
             studentsList.Clear();
@@ -132,7 +123,6 @@ namespace PRG282_Project_Group3
 
         private void dgvMain_Click(object sender, EventArgs e)
         {
-            //Consider changing RichTextBox to a listview to display easier
         }
 
         private void dgvMain_CellContentClick(object sender, DataGridViewCellEventArgs e)

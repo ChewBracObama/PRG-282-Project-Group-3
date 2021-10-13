@@ -15,10 +15,7 @@ namespace PRG282_Project_Group3.Data_Access_Layer
 
         public Datahandler()
         {
-            //Aiden// string connectionString = @"Data Source=DESKTOP-T23DGMJ\SQLEXPRESS;Initial Catalog=PRG282_Project1;Integrated Security=True";
-            //Martin // string connectionString = @"Data Source=DESKTOP-DMOGBGT\MSSQLSERVERBLG;Initial Catalog=PRG282_Project1;Integrated Security=True";
-            //Bham // string connectionString = @"Data Source=HADES;Initial Catalog=PRG282_Project1;Integrated Security=True";
-            string connectionString = @"Data Source=HADES;Initial Catalog=PRG282_Project1;Integrated Security=True";
+            string connectionString = @"Data Source=(local);Initial Catalog=PRG282_Project1;Integrated Security=True";
             this.connection = new SqlConnection(connectionString);
         }
 
