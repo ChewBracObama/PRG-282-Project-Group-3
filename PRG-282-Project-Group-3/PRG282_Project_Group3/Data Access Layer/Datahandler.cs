@@ -53,6 +53,7 @@ namespace PRG282_Project_Group3.Data_Access_Layer
             List<Modules> ModuleList = new List<Modules>();
             string querygetModule = "SELECT * FROM Modules;";
             SqlCommand getModule_cmd = new SqlCommand(querygetModule, connection);
+            connection.Open();
             using (var moduleReader = getModule_cmd.ExecuteReader())
             {
                 while (moduleReader.Read())
@@ -64,6 +65,7 @@ namespace PRG282_Project_Group3.Data_Access_Layer
                 }
 
             }
+            connection.Close();
             return ModuleList;
         }
 

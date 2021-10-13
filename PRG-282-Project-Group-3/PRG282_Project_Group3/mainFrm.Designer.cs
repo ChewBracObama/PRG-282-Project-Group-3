@@ -45,6 +45,8 @@ namespace PRG282_Project_Group3
             this.btnNext = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblImage = new System.Windows.Forms.Label();
+            this.btnShowModule = new System.Windows.Forms.Button();
+            this.btnShowStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStudent)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +59,7 @@ namespace PRG282_Project_Group3
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
             this.dgvMain.Size = new System.Drawing.Size(509, 211);
-            this.dgvMain.TabIndex = 0;
+            this.dgvMain.TabIndex = 20;
             this.dgvMain.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellEnter);
             this.dgvMain.Click += new System.EventHandler(this.dgvMain_Click);
             // 
@@ -68,10 +70,10 @@ namespace PRG282_Project_Group3
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnAdd.Location = new System.Drawing.Point(15, 358);
+            this.btnAdd.Location = new System.Drawing.Point(12, 371);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(91, 30);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add New User";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
@@ -96,7 +98,7 @@ namespace PRG282_Project_Group3
             this.btnLogOut.Location = new System.Drawing.Point(12, 447);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(75, 28);
-            this.btnLogOut.TabIndex = 8;
+            this.btnLogOut.TabIndex = 11;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -109,10 +111,10 @@ namespace PRG282_Project_Group3
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnUpdate.Location = new System.Drawing.Point(15, 305);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 335);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(91, 30);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -124,10 +126,10 @@ namespace PRG282_Project_Group3
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnDelete.Location = new System.Drawing.Point(15, 254);
+            this.btnDelete.Location = new System.Drawing.Point(12, 297);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 32);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete User";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -167,7 +169,7 @@ namespace PRG282_Project_Group3
             this.tbSearch.Location = new System.Drawing.Point(12, 48);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(156, 20);
-            this.tbSearch.TabIndex = 27;
+            this.tbSearch.TabIndex = 0;
             // 
             // btnLast
             // 
@@ -179,7 +181,7 @@ namespace PRG282_Project_Group3
             this.btnLast.Location = new System.Drawing.Point(621, 429);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(69, 46);
-            this.btnLast.TabIndex = 7;
+            this.btnLast.TabIndex = 10;
             this.btnLast.Text = "Last index";
             this.btnLast.UseVisualStyleBackColor = true;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
@@ -194,7 +196,7 @@ namespace PRG282_Project_Group3
             this.btnFirst.Location = new System.Drawing.Point(181, 429);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(69, 46);
-            this.btnFirst.TabIndex = 4;
+            this.btnFirst.TabIndex = 7;
             this.btnFirst.Text = "First Index";
             this.btnFirst.UseVisualStyleBackColor = true;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
@@ -209,7 +211,7 @@ namespace PRG282_Project_Group3
             this.btnPrev.Location = new System.Drawing.Point(335, 434);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(60, 36);
-            this.btnPrev.TabIndex = 5;
+            this.btnPrev.TabIndex = 8;
             this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
@@ -224,7 +226,7 @@ namespace PRG282_Project_Group3
             this.btnNext.Location = new System.Drawing.Point(451, 434);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(60, 36);
-            this.btnNext.TabIndex = 6;
+            this.btnNext.TabIndex = 9;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -239,7 +241,7 @@ namespace PRG282_Project_Group3
             this.btnSearch.Location = new System.Drawing.Point(12, 74);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 0;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.button1_Click_2);
@@ -255,12 +257,44 @@ namespace PRG282_Project_Group3
             this.lblImage.TabIndex = 34;
             this.lblImage.Text = "Student Image";
             // 
+            // btnShowModule
+            // 
+            this.btnShowModule.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowModule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnShowModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowModule.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.btnShowModule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnShowModule.Location = new System.Drawing.Point(12, 259);
+            this.btnShowModule.Name = "btnShowModule";
+            this.btnShowModule.Size = new System.Drawing.Size(91, 32);
+            this.btnShowModule.TabIndex = 3;
+            this.btnShowModule.Text = "Modules";
+            this.btnShowModule.UseVisualStyleBackColor = true;
+            this.btnShowModule.Click += new System.EventHandler(this.btnShowModule_Click);
+            // 
+            // btnShowStudent
+            // 
+            this.btnShowStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnShowStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowStudent.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.btnShowStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
+            this.btnShowStudent.Location = new System.Drawing.Point(12, 221);
+            this.btnShowStudent.Name = "btnShowStudent";
+            this.btnShowStudent.Size = new System.Drawing.Size(91, 32);
+            this.btnShowStudent.TabIndex = 2;
+            this.btnShowStudent.Text = "Students";
+            this.btnShowStudent.UseVisualStyleBackColor = true;
+            this.btnShowStudent.Click += new System.EventHandler(this.btnShowStudent_Click);
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(706, 487);
+            this.Controls.Add(this.btnShowStudent);
+            this.Controls.Add(this.btnShowModule);
             this.Controls.Add(this.lblImage);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnNext);
@@ -308,5 +342,7 @@ namespace PRG282_Project_Group3
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblImage;
+        private System.Windows.Forms.Button btnShowModule;
+        private System.Windows.Forms.Button btnShowStudent;
     }
 }
