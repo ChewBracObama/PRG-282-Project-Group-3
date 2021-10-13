@@ -1,6 +1,7 @@
 ﻿using PRG282_Project_Group3.Data_Access_Layer;
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PRG282_Project_Group3
@@ -21,6 +22,9 @@ namespace PRG282_Project_Group3
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            string invalidPassChars = "[\"';]";
+            Regex invalidChars = new Regex(invalidPassChars);
+
             bool accountCreated = false;
 
             string username = tbxUsername.Text;
@@ -32,9 +36,9 @@ namespace PRG282_Project_Group3
 
             do
             {
-                if (pass.Contains(";") == true || username.Contains(";") == true)
+                if (string.IsNullOrEmpty(username) == true || string.IsNullOrEmpty(pass) == true || string.IsNullOrEmpty(passRepeat) == true)
                 {
-                    MessageBox.Show("No semi-colons (;) allowed");
+                    MessageBox.Show("One or more of the entries is empty");
                     tbxUsername.Clear();
                     tbxPass.Clear();
                     tbxPassRepeat.Clear();
@@ -42,45 +46,57 @@ namespace PRG282_Project_Group3
                 }
                 else
                 {
-                    if (File.Exists(file) == true)
+                    if (invalidChars.IsMatch(pass) == true || invalidChars.IsMatch(username) == true)
                     {
-                        if ((passlength >= 8) && (pass == passRepeat))
-                        {
-                            accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
-
-                            createForm1();
-                            break;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid details entered. Please try again");
-                            tbxUsername.Clear();
-                            tbxPass.Clear();
-                            tbxPassRepeat.Clear();
-                            break;
-                        }
+                        MessageBox.Show("No Semi-Colons (;), Double Quotation Marks (\"\") or Single Quotation Marks ('') allowed in Username or Password");
+                        tbxUsername.Clear();
+                        tbxPass.Clear();
+                        tbxPassRepeat.Clear();
+                        break;
                     }
                     else
                     {
-                        if ((passlength >= 8) && (pass == passRepeat))
+                        if (File.Exists(file) == true)
                         {
-                            File.Create(file);
+                            if ((passlength >= 8) && (pass == passRepeat))
+                            {
+                                accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
 
-                            accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
-
-                            createForm1();
-                            break;
+                                createForm1();
+                                break;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid details entered. Please try again");
+                                tbxUsername.Clear();
+                                tbxPass.Clear();
+                                tbxPassRepeat.Clear();
+                                break;
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Invalid details entered. Please try again");
-                            tbxUsername.Clear();
-                            tbxPass.Clear();
-                            tbxPassRepeat.Clear();
-                            break;
+                            if ((passlength >= 8) && (pass == passRepeat))
+                            {
+                                File.Create(file);
+
+                                accountCreated = fileHandler.RegisterUser(file, username, pass, accountCreated);
+
+                                createForm1();
+                                break;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid details entered. Please try again");
+                                tbxUsername.Clear();
+                                tbxPass.Clear();
+                                tbxPassRepeat.Clear();
+                                break;
+                            }
                         }
                     }
                 }
+                
             } while (accountCreated == false);
         }
 
