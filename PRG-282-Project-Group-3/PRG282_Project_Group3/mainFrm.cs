@@ -10,11 +10,11 @@ namespace PRG282_Project_Group3
     public partial class mainFrm : Form
     {
         private Datahandler dataHandler = new Datahandler();
-
+        private int displayValue = 0;
         private string[] modules = { "PRG281", "DBD281", "MAT282", "WPR181", "STA281", "LPR282", "MAT281" };
         private List<Students> studentsList = new List<Students>();
-      //  private List<Modules> moduleList = new List<Modules>();
         private List<JoiningTable> studentModules = new List<JoiningTable>(); //////////testing
+        private List<Modules> moduleList = new List<Modules>();
         private BindingSource bs = new BindingSource();
         private BusinessLogic businessLogic = new BusinessLogic();
         private Datahandler datahandler = new Datahandler();
@@ -31,7 +31,7 @@ namespace PRG282_Project_Group3
         {
             InitializeComponent();
             studentsList = datahandler.getStudents();
-          //  moduleList = datahandler.getModules();
+            moduleList = datahandler.getModules();
             bs.DataSource = studentsList;
             dgvMain.DataSource = bs;
         }
@@ -105,18 +105,29 @@ namespace PRG282_Project_Group3
 
         private void dgvMain_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
-
-            studentModules = dataHandler.getJoiningTable(studentsList[index].StudentID);
-            rtbxSummary.Clear();
-            string modules = "";
-            foreach (var item in studentModules)
+            if (displayValue == 0)
             {
-                modules += "\n" + item.ModuleID.ToString();
-            }
-            pbStudent.Image = studentsList[index].StudentImage;
-            rtbxSummary.Text = rtbxSummary.Text = $"Student Number:\t{studentsList[index].StudentID}\nStudent Name:\t{studentsList[index].Name}\nStudent Surname:\t{studentsList[index].Surname}\nStudent Cell:\t{studentsList[index].Phone}\nModules:\n\t{modules}";
+                int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
 
+                studentModules = dataHandler.getJoiningTable(studentsList[index].StudentID);
+                rtbxSummary.Clear();
+                string modules = "";
+                foreach (var item in studentModules)
+                {
+                    modules += "\n" + item.ModuleID.ToString();
+                }
+                pbStudent.Image = studentsList[index].StudentImage;
+                rtbxSummary.Text = $"Student Number:\t{studentsList[index].StudentID}\nStudent Name:\t{studentsList[index].Name}\nStudent Surname:\t{studentsList[index].Surname}\nStudent Cell:\t{studentsList[index].Phone}\nModules:\n\t{modules}";
+            }
+            else if (displayValue == 1)
+            {
+                int index = int.Parse((dgvMain.CurrentCell.RowIndex).ToString());
+
+                studentModules = dataHandler.getJoiningTable(studentsList[index].StudentID);
+                rtbxSummary.Clear();
+
+                rtbxSummary.Text = $"Module Code:\t{moduleList[index].Code}\nModule Name:\t{moduleList[index].Name}\nModule Link:\t{moduleList[index].Link}\nModule Description:\t{moduleList[index].Description}";
+            }
         }
 
         private void dgvMain_Click(object sender, EventArgs e)
@@ -124,41 +135,49 @@ namespace PRG282_Project_Group3
             //Consider changing RichTextBox to a listview to display easier
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void dgvMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int searchID = int.Parse(tbSearch.Text);
-            foreach (var item in studentsList)
-            {
-                if (item.StudentID == searchID)
-                {
-                    studentModules = dataHandler.getJoiningTable(item.StudentID);
-                    string modules = "";
-                    foreach (var module in studentModules)
-                    {
-                        modules += "\n" + module.ModuleID.ToString();
-                    }
-                    rtbxSummary.Text = $"Student Number:\t{item.StudentID}\nStudent Name:\t{item.Name}\nStudent Surname:\t{item.Surname}\nStudent Cell:\t{item.Phone}\nModules:\n\t{modules}";
-                    pbStudent.Image = item.StudentImage;
-                }
-            }
         }
-
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            int searchID = int.Parse(tbSearch.Text);
-            foreach (var item in studentsList)
+            if (string.IsNullOrEmpty(tbSearch.Text) == true)
             {
-                if (item.StudentID == searchID)
+                MessageBox.Show("Please enter a value into the search bar before beginning search");
+                tbSearch.Focus();
+            }
+            else
+            {
+                if (displayValue == 0)
                 {
-                    studentModules = dataHandler.getJoiningTable(item.StudentID);
-                    string modules = "";
-                    foreach (var module in studentModules)
+                    int searchID = int.Parse(tbSearch.Text);
+                    foreach (var item in studentsList)
                     {
-                        modules += "\n" + module.ModuleID.ToString();
+                        if (item.StudentID == searchID)
+                        {
+                            studentModules = dataHandler.getJoiningTable(item.StudentID);
+                            string modules = "";
+                            foreach (var module in studentModules)
+                            {
+                                modules += "\n" + module.ModuleID.ToString();
+                            }
+                            rtbxSummary.Text = $"Student Number:\t{item.StudentID}\nStudent Name:\t{item.Name}\nStudent Surname:\t{item.Surname}\nStudent Cell:\t{item.Phone}\nModules:\n\t{modules}";
+                            pbStudent.Image = item.StudentImage;
+                        }
                     }
-                    rtbxSummary.Text = $"Student Number:\t{item.StudentID}\nStudent Name:\t{item.Name}\nStudent Surname:\t{item.Surname}\nStudent Cell:\t{item.Phone}\nModules:\n\t{modules}";
-                    pbStudent.Image = item.StudentImage;
+                    tbSearch.Clear();
+                }
+                else if (displayValue == 1)
+                {
+                    string searchID = tbSearch.Text.ToUpper();
+                    foreach (var item in moduleList)
+                    {
+                        if (item.Code == searchID)
+                        {
+                            rtbxSummary.Text = $"Module Code:\t{item.Code}\nModule Name:\t{item.Name}\nModule Link:\t{item.Link}\nModule Description:\t{item.Description}";
+                        }
+                    }
+                    tbSearch.Clear();
                 }
             }
         }
@@ -183,5 +202,34 @@ namespace PRG282_Project_Group3
             bs.MoveLast();
         }
 
+        private void btnShowStudent_Click(object sender, EventArgs e)
+        {
+            lblImage.Visible = true;
+            bs.DataSource = studentsList;
+            dgvMain.DataSource = bs;
+            dgvMain.Refresh();
+            rtbxSummary.Clear();
+            displayValue = 0;
+            btnUpdate.Enabled = true;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            pbStudent.Image = null;
+            lblSearch.Text = "Search by Student ID";
+        }
+
+        private void btnShowModule_Click(object sender, EventArgs e)
+        {
+            lblImage.Visible = false;
+            bs.DataSource = moduleList;
+            dgvMain.DataSource = bs;
+            dgvMain.Refresh();
+            rtbxSummary.Clear();
+            displayValue = 1;
+            btnUpdate.Enabled = false;
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            pbStudent.Image = null;
+            lblSearch.Text = "Search by Module Code";
+        }
     }
 }
