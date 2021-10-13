@@ -166,5 +166,25 @@ namespace PRG282_Project_Group3
                 }
             }
         }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            bs.MoveFirst();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            bs.MovePrevious();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            bs.MoveNext();
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            bs.MoveLast();
+        }
     }
 }

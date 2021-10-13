@@ -48,10 +48,9 @@ namespace PRG282_Project_Group3
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.label2.Location = new System.Drawing.Point(229, 311);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(172, 253);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 25);
+            this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
@@ -61,24 +60,23 @@ namespace PRG282_Project_Group3
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.label3.Location = new System.Drawing.Point(229, 239);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(172, 194);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 25);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Username";
             // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnRegister.Location = new System.Drawing.Point(180, 459);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Location = new System.Drawing.Point(135, 373);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(203, 46);
+            this.btnRegister.Size = new System.Drawing.Size(152, 37);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -87,13 +85,13 @@ namespace PRG282_Project_Group3
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.btnBack.Location = new System.Drawing.Point(180, 528);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Location = new System.Drawing.Point(135, 429);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(203, 46);
+            this.btnBack.Size = new System.Drawing.Size(152, 37);
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -104,46 +102,41 @@ namespace PRG282_Project_Group3
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.label5.Location = new System.Drawing.Point(249, 508);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(187, 413);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "You lost?";
             // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(41, 267);
-            this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUsername.Location = new System.Drawing.Point(31, 217);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(488, 22);
+            this.tbxUsername.Size = new System.Drawing.Size(367, 20);
             this.tbxUsername.TabIndex = 0;
             // 
             // tbxPass
             // 
-            this.tbxPass.Location = new System.Drawing.Point(41, 340);
-            this.tbxPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPass.Location = new System.Drawing.Point(31, 276);
             this.tbxPass.Name = "tbxPass";
             this.tbxPass.PasswordChar = '*';
-            this.tbxPass.Size = new System.Drawing.Size(488, 22);
+            this.tbxPass.Size = new System.Drawing.Size(367, 20);
             this.tbxPass.TabIndex = 1;
             // 
             // tbxPassRepeat
             // 
-            this.tbxPassRepeat.Location = new System.Drawing.Point(41, 411);
-            this.tbxPassRepeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPassRepeat.Location = new System.Drawing.Point(31, 334);
             this.tbxPassRepeat.Name = "tbxPassRepeat";
             this.tbxPassRepeat.PasswordChar = '*';
-            this.tbxPassRepeat.Size = new System.Drawing.Size(488, 22);
+            this.tbxPassRepeat.Size = new System.Drawing.Size(367, 20);
             this.tbxPassRepeat.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PRG282_Project_Group3.Properties.Resources.kissclipart_join_our_team_clipart_youtube_clip_art_83f9c5a9710d28ab;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(483, 220);
+            this.pictureBox1.Size = new System.Drawing.Size(362, 179);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -154,19 +147,18 @@ namespace PRG282_Project_Group3
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(235)))));
-            this.label1.Location = new System.Drawing.Point(196, 383);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(147, 311);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 25);
+            this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "Repeat Password";
             // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(569, 583);
+            this.ClientSize = new System.Drawing.Size(427, 474);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbxPassRepeat);
@@ -178,8 +170,11 @@ namespace PRG282_Project_Group3
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
